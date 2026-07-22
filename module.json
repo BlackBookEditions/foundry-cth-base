@@ -1,0 +1,24 @@
+{
+  "id": "cth-base",
+  "title": "Cthulhu : Base",
+  "description": "Surcouche d'univers cthulhien posée sur le module Chroniques Oubliées Contemporain 2 (coc2-base), système Chroniques Oubliées 2 (co2).",
+  "url": "#{URL}#",
+  "version": "0.1.0",
+  "compatibility": { "minimum": "14", "maximum": "14", "verified": "14" },
+  "relationships": {
+    "systems": [
+      { "id": "co2", "type": "system", "compatibility": { "verified": "2.3.0" } }
+    ],
+    "requires": [
+      { "id": "coc2-base", "type": "module" }
+    ],
+    "optional": []
+  },
+  "authors": [ { "name": "kristov" } ],
+  "esmodules": ["cth-base.mjs"],
+  "styles": ["cth-base.css"],
+  "languages": [ { "lang": "fr", "name": "French", "path": "lang/fr.json" } ],
+  "socket": false,
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#"
+}
