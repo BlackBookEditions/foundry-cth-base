@@ -2,6 +2,25 @@
   "CTHBASE": {
     "module": {
       "title": "Cthulhu : Base"
+    },
+    "status": {
+      "meurtri": "Meurtri"
+    },
+    "consciousnessScale": {
+      "label": "Échelle de conscience",
+      "short": "Conscience"
+    },
+    "consciousness": {
+      "status": {
+        "profane": "Profane",
+        "profaneDescription": "5e échelon de l'échelle de conscience. Aucun modificateur particulier.",
+        "initie": "Initié",
+        "initieDescription": "10e échelon de l'échelle de conscience. Aucun modificateur particulier.",
+        "eveille": "Éveillé",
+        "eveilleDescription": "15e échelon de l'échelle de conscience. Aucun modificateur particulier.",
+        "illumine": "Illuminé",
+        "illumineDescription": "20e échelon de l'échelle de conscience. Aucun modificateur particulier."
+      }
     }
   }
 }

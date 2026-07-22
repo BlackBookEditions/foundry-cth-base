@@ -22,13 +22,29 @@ Hooks.once("init", () => {
   //
   // Sûr ici quel que soit l'ordre de chargement : CONFIG.COC2BASE est peuplée au
   // top-level de coc2-base, donc déjà disponible au moment de ce hook init.
-  //
-  // TODO(univers cthulhien) : définir le mapping (renommage d'états de santé, seuils…).
-  // Tant que ce bloc est vide, cth-base ne modifie PAS le comportement de coc2-base.
-  //
-  // Exemple :
-  //   CONFIG.COC2BASE.healthStates.affaibli.name = "CTHBASE.status.choque"
   // ─────────────────────────────────────────────────────────────────────────────
+
+  // Échelle de santé : le vocabulaire s'adapte à l'univers cthulhien.
+  // L'échelon 20 (« mourant ») s'affiche « Meurtri » — le même objet est référencé par le
+  // statut posé sur le token, donc la mutation se répercute partout ; le libellé est
+  // localisé ensuite par le hook i18nInit du système (postérieur à ce init).
+  CONFIG.COC2BASE.healthStates.mourant.name = "CTHBASE.status.meurtri"
+
+  // Seconde échelle : forcée visible et renommée « Échelle de conscience » dans l'univers cthulhien.
+  // Compteur avec libellé de palier affiché sur la fiche, SANS statut de token. Le libellé est lu au
+  // rendu de la fiche ; le flag `forced` la rend visible sans dépendre du réglage de monde.
+  CONFIG.COC2BASE.secondScale.forced = true
+  CONFIG.COC2BASE.secondScale.label = "CTHBASE.consciousnessScale.label"
+  CONFIG.COC2BASE.secondScale.labelShort = "CTHBASE.consciousnessScale.short"
+
+  // Paliers de conscience atteints aux échelons 5/10/15/20 (seuils 25/50/75/100 %) : Profane, Initié,
+  // Éveillé, Illuminé. Affichage seul (aucun statut, aucun modificateur) : on ne renomme que le libellé
+  // et la description du niveau affiché sur la fiche.
+  const consciousnessStates = { secondState1: "profane", secondState2: "initie", secondState3: "eveille", secondState4: "illumine" }
+  for (const [id, key] of Object.entries(consciousnessStates)) {
+    CONFIG.COC2BASE.secondScale.states[id].name = `CTHBASE.consciousness.status.${key}`
+    CONFIG.COC2BASE.secondScale.states[id].description = `CTHBASE.consciousness.status.${key}Description`
+  }
 
   console.info("CTH Base | Fin de l'initialisation du module")
 })

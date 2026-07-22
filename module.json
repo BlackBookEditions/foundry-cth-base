@@ -1,9 +1,9 @@
 {
   "id": "cth-base",
-  "title": "Cthulhu : Base",
-  "description": "Surcouche d'univers cthulhien posée sur le module Chroniques Oubliées Contemporain 2 (coc2-base), système Chroniques Oubliées 2 (co2).",
+  "title": "Chroniques Oubliées Cthulhu Origines",
+  "description": "Adaptation du module Chroniques Oubliées Contemporain 2e édition aux règles de Chroniques Oubliées Cthulhu Origines",
   "url": "#{URL}#",
-  "version": "0.1.0",
+  "version": "#{VERSION}#",
   "compatibility": { "minimum": "14", "maximum": "14", "verified": "14" },
   "relationships": {
     "systems": [
