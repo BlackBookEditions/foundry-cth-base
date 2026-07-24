@@ -50,15 +50,18 @@ Hooks.once("init", () => {
 })
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Réservé aux surcharges devant s'exécuter APRÈS le hook init de coc2-base
-// (remplacement de CONFIG.Actor.documentClass, fiche makeDefault, statusEffects…).
-// Le hook setup passe après tous les init : on est certain de repasser derrière
-// coc2-base sans dépendre de l'ordre de chargement des modules.
-// Non utilisé au démarrage — décommenter et remplir au besoin.
+// Surcharges devant s'exécuter APRÈS le hook init de coc2-base. Le hook setup passe
+// après tous les init : on est certain de repasser derrière coc2-base sans dépendre
+// de l'ordre de chargement des modules.
 // ─────────────────────────────────────────────────────────────────────────────
-// Hooks.once("setup", () => {
-//   console.info("CTH Base | Setup...")
-// })
+Hooks.once("setup", () => {
+  // Le réglage coc2 « Afficher la seconde échelle » est sans effet en cth : l'échelle de Conscience
+  // est déjà forcée visible (CONFIG.COC2BASE.secondScale.forced = true, cf. init ci-dessus). On le
+  // retire du menu des réglages de monde pour éviter la confusion. Au setup (après tous les init),
+  // le réglage est garanti enregistré par coc2-base quel que soit l'ordre de chargement.
+  const setting = game.settings.settings.get("coc2-base.showSecondScale")
+  if (setting) setting.config = false
+})
 
 Hooks.once("ready", async () => {
   console.info("CTH Base | Module prêt")
