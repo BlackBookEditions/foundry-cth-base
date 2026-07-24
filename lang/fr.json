@@ -13,20 +13,23 @@
       "rank": {
         "label": "Rang",
         "hint": "Rang d'horreur de la créature (1 à 5), distinct de la Taille. Détermine la difficulté du test de VOL de prise de conscience et celle des rituels d'appel/protection.",
+        "tooltip": "Test de VOL difficulté {vol} (échec critique {fumble}) · Rituel : difficulté {ritual}",
         "none": "— Rang —"
       },
       "volTest": {
-        "button": "Test de VOL",
-        "difficulty": "Test de VOL difficulté",
-        "fumble": "échec critique",
-        "hint": "Provoque un test de VOL de prise de conscience chez les témoins ciblés (tokens sélectionnés).",
+        "clickHint": "Cliquer pour provoquer le test de VOL sur les témoins ciblés",
         "flavor": "Prise de conscience face à {name} — Test de VOL difficulté {difficulty}",
         "noWitness": "Ciblez au moins un témoin (token) pour provoquer le test de VOL.",
         "noRank": "Renseignez d'abord le Rang de la créature."
       },
-      "ritual": {
-        "difficulty": "Rituel : difficulté",
-        "hint": "Difficulté des rituels d'appel ou de protection concernant cette créature (5 × Rang)."
+      "size": {
+        "tiny": "Taille minuscule",
+        "verySmall": "Taille très petite",
+        "small": "Taille petite",
+        "medium": "Taille moyenne",
+        "large": "Taille grande",
+        "huge": "Taille très grande",
+        "colossal": "Taille gigantesque"
       }
     },
     "consciousnessScale": {

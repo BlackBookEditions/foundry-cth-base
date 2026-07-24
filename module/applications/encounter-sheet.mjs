@@ -44,6 +44,39 @@ export default class CTHEncounterSheet extends COC2EncounterSheet {
       context.volDifficulty = getVolDifficulty(rank)
       context.ritualDifficulty = getRitualDifficulty(rank)
       context.fumbleRange = rank > 1 ? `1-${rank}` : "1"
+      // En mode lecture, l'infobulle du libellé « Rang X » porte le détail VOL + rituel (plus de bloc
+      // visible sous la santé). L'icône d20 accolée, elle, déclenche le test et porte son propre rappel.
+      context.volTooltip = game.i18n.format("CTHBASE.encounter.rank.tooltip", {
+        vol: context.volDifficulty,
+        fumble: context.fumbleRange,
+        ritual: context.ritualDifficulty,
+      })
+    }
+
+    // Créatures : la taille n'a pas de libellé de champ propre dans le header ; on préfixe chaque
+    // option par « Taille … » pour que le sélecteur (et l'affichage en lecture) reste explicite.
+    // Les humains (archétype) conservent les libellés bruts de coc2-base.
+    if (context.isCreature) {
+      context.choiceSizes = Object.fromEntries(Object.keys(context.choiceSizes).map((id) => [id, `CTHBASE.encounter.size.${id}`]))
+    }
+
+    // Aides à la création : coc2-base affiche toujours le récapitulatif des quotas. On ne le montre
+    // qu'en cas d'ÉCART avec le profil (positif OU négatif) — points de caractéristiques différents du
+    // budget, plafond par caractéristique dépassé, ou nombre de capacités différent. Si tout correspond,
+    // rien ne s'affiche. Recalculé ici depuis context.profile pour ne pas toucher la méthode privée
+    // #prepareQuotas de coc2-base (partagée par les autres univers).
+    if (context.hasQuotas && context.profile) {
+      const profile = context.profile
+      const abilities = Object.values(this.document.system.abilities)
+      const abilityPoints = abilities.reduce((total, ability) => total + Math.max(0, ability.base), 0)
+      const highestAbility = Math.max(0, ...abilities.map((ability) => ability.base))
+      const capacityCount = this.document.learnedCapacities.length
+
+      const abilityGap = abilityPoints !== profile.abilityPoints
+      const capGap = profile.maxPerAbility !== null && highestAbility > profile.maxPerAbility
+      const capacityGap = profile.capacityPoints !== null && capacityCount !== profile.capacityPoints
+
+      context.quotasHasGap = abilityGap || capGap || capacityGap
     }
 
     return context

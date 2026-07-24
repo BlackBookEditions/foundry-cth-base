@@ -35,7 +35,14 @@
       <span class="trait size">{{localize (lookup choiceSizes system.details.size)}}</span>
       {{#if isCreature}}
         {{#if rank}}
-          <span class="trait rank" data-tooltip="{{localize 'CTHBASE.encounter.rank.hint'}}">{{localize 'CTHBASE.encounter.rank.label'}} {{rank}}</span>
+          {{!-- Lecture : le libellé « Rang X » porte l'infobulle VOL + rituel ; l'icône (visible au MJ)
+                déclenche le test de VOL sur les témoins ciblés au clic. --}}
+          <span class="trait rank" data-tooltip="{{volTooltip}}">
+            {{localize 'CTHBASE.encounter.rank.label'}} {{rank}}
+            {{#if editable}}
+              <a class="cth-vol-trigger" data-action="rollHorrorSave" data-tooltip="{{localize 'CTHBASE.encounter.volTest.clickHint'}}" data-tooltip-direction="UP"><i class="fas fa-dice-d20"></i></a>
+            {{/if}}
+          </span>
         {{/if}}
       {{/if}}
     {{/if}}
@@ -106,30 +113,8 @@
       </div>
     {{/unless}}
   </div>
-  {{!-- Créature : rappels de difficulté (VOL de prise de conscience + rituels) et bouton de test de VOL --}}
-  {{#if isCreature}}
-    {{#if rank}}
-      {{#unless viewLimited}}
-        <div class="cth-horror-rank">
-          <div class="horror-info">
-            <span data-tooltip="{{localize 'CTHBASE.encounter.volTest.hint'}}">
-              <i class="fas fa-fw fa-brain"></i>
-              {{localize 'CTHBASE.encounter.volTest.difficulty'}} {{volDifficulty}} ({{localize 'CTHBASE.encounter.volTest.fumble'}} {{fumbleRange}})
-            </span>
-            <span data-tooltip="{{localize 'CTHBASE.encounter.ritual.hint'}}">
-              <i class="fas fa-fw fa-hand-sparkles"></i>
-              {{localize 'CTHBASE.encounter.ritual.difficulty'}} {{ritualDifficulty}}
-            </span>
-          </div>
-          {{#if editable}}
-            <a class="cth-vol-button" data-action="rollHorrorSave" data-tooltip="{{localize 'CTHBASE.encounter.volTest.hint'}}">
-              <i class="fas fa-dice-d20"></i> {{localize 'CTHBASE.encounter.volTest.button'}} ({{volDifficulty}})
-            </a>
-          {{/if}}
-        </div>
-      {{/unless}}
-    {{/if}}
-  {{/if}}
+  {{!-- Le détail VOL/rituel n'est plus un bloc visible : il est porté par l'infobulle du Rang (mode lecture),
+        et le clic sur le Rang provoque le test de VOL. --}}
   {{!-- Antagoniste humain : ruban de l'Échelle de conscience, sous la santé, comme sur la fiche de personnage --}}
   {{#if showSecondScale}}
     {{#unless isCreature}}
@@ -169,8 +154,9 @@
     {{/unless}}
   {{/if}}
   {{#if unlocked}}
-    {{#if hasQuotas}}
-      {{!-- Compteur de création, informatif : rouge en cas de dépassement, jamais bloquant --}}
+    {{!-- Aides à la création : affichées uniquement en cas d'écart avec le profil (positif ou négatif).
+         Tout conforme → rien. Rouge en cas de dépassement, jamais bloquant. --}}
+    {{#if quotasHasGap}}
       <div class="notification {{#if quotasValid}}info{{else}}error{{/if}} permanent coc2-encounter-quotas">{{quotasMessage}}{{quotasErrors}}</div>
     {{/if}}
   {{/if}}

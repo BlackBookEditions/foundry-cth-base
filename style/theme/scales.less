@@ -69,10 +69,12 @@
       background-color: @cth-health;
     }
   }
+  // Choix utilisateur : les échelons COCHÉS de la Conscience reprennent le rouge sang de la Santé
+  // (et non le violet). Le violet reste la couleur d'identité du ruban (libellé/icône).
   .second-scale-bar .scale-step.filled:not(.milestone) {
     color: var(--co-text-light);
     &::before {
-      background-color: @cth-conscience;
+      background-color: @cth-health;
     }
   }
 
@@ -108,8 +110,9 @@
     background-color: @cth-health;
     opacity: 1;
   }
+  // Jalon de Conscience atteint : tourbillon en rouge sang comme la Santé (choix utilisateur)
   .second-scale-bar .scale-step.milestone.filled::before {
-    background-color: @cth-conscience;
+    background-color: @cth-health;
     opacity: 1;
   }
 }
