@@ -1,0 +1,74 @@
+/*
+ * PALETTE DU THÈME CTH — « Parchemin fidèle »
+ *
+ * Surcharge de la palette monochrome de coc2-base (modules/coc2-base/style/palette.less), qui elle-même
+ * surcharge celle du système (systems/co2/styles/palette.less). On redéclare les mêmes sélecteurs de
+ * thème ; la feuille de cth-base étant chargée en dernier, ces valeurs l'emportent.
+ *
+ * UN SEUL JEU DE VALEURS pour les deux modes (comme coc2-base) : l'habillage parchemin est identique en
+ * thème Foundry clair et sombre. Le texte du contenu (posé sur parchemin clair) est forcé sombre dans les
+ * deux thèmes par theme/sheet.less.
+ *
+ * NE SONT PAS SURCHARGÉES les variables --co-result-* : succès, échec, critique et fumble portent une
+ * information de lecture, elles restent colorées.
+ */
+
+.theme-light,
+.theme-dark {
+  // Chrome et feuilles
+  --co-sheet-accent: #14110d; // bandeaux : nom, libellés d'échelle, cases AGI/CON… — noir encre chaud
+  --co-sheet-accent-alt: #241d14; // barre de caractéristiques, onglets, en-têtes de section
+  --co-surface: #efe7d3; // cases valeurs / champs — parchemin clair (reste clair)
+  --co-encounter-accent: #2b1414cc;
+  --co-window-content: rgba(233, 224, 204, 0.35); // fond de contenu → teinte parchemin translucide
+  --co-text-light: #f4ecd8; // texte crème sur bandeaux
+  --co-text-dark: #1c1710; // texte encre sur parchemin
+  --co-green: #5c6b3a;
+  --co-grey: #b9ad93;
+
+  // Sections de la barre latérale — quasi-noires, léger codage couleur conservé pour la lisibilité
+  --co-stat-attack: #4a1414;
+  --co-stat-initiative: #241d14;
+  --co-stat-defense: #1c2a33;
+  --co-stat-health: #3a1414;
+  --co-stat-damages: #2e2436;
+  --co-stat-resource: #23302a;
+
+  // Cartes de chat : co2 y pose du texte clair, les fonds restent sombres (sépia)
+  --co-chat-skill: #23303b;
+  --co-chat-attack: #3a1a12;
+  --co-chat-damages: #4a1414;
+  --co-chat-heal: #233a26;
+  --co-chat-rest: #33381f;
+  --co-chat-save: #2e2436;
+  --co-chat-item: #3a2f1c;
+  --co-chat-shadow: #b9ad93;
+
+  // Fenêtres de jet
+  --co-dialog-attack-bg: rgba(58, 20, 20, 0.5);
+  --co-dialog-skill-bg: rgba(36, 40, 55, 0.45);
+  --co-dialog-attack-accent: #2b0d0d;
+  --co-dialog-attack-surface: #3a1414;
+  --co-dialog-skill-accent: #241d14;
+  --co-dialog-skill-highlight: #6b5a3a;
+  --co-dialog-muted: #b9ad93;
+  --co-dialog-overlay: #f4ecd857;
+
+  // Types d'objets : paires sépia / bordeaux thématiques (dégradé dark → light des bandeaux)
+  --co-item-capacity-dark: #3a1520;
+  --co-item-capacity-light: #7a2e46;
+  --co-item-equipment-dark: #4a3418;
+  --co-item-equipment-light: #8a6a2c;
+  --co-item-container-dark: #4a3418;
+  --co-item-container-light: #8a6a2c;
+  --co-item-feature-dark: #1a3540;
+  --co-item-feature-light: #366b7a;
+  --co-item-path-dark: #2e1f3a;
+  --co-item-path-light: #5a3a7a;
+  --co-item-profile-dark: #1c2340;
+  --co-item-profile-light: #3a4a7a;
+  --co-item-attack-dark: #3a0d0d;
+  --co-item-attack-light: #7a2424;
+
+  // --co-result-* : volontairement non surchargées (couleurs porteuses d'information)
+}

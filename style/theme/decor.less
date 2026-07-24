@@ -1,0 +1,57 @@
+/*
+ * DÉCOR — filigrane de fond + spirales tentaculaires
+ *
+ * Purement décoratif : pointer-events:none, et surtout STRICTEMENT à l'intérieur de .window-content,
+ * en z-index NÉGATIF. Le décor est ainsi peint au-dessus du fond parchemin mais SOUS le contenu, sans
+ * qu'on ait à remonter le contenu — remonter le contenu (ou déborder hors de la fenêtre) recouvrait la
+ * poignée de redimensionnement de la fenêtre (.window-resize-handle, sœur de .window-content, au coin
+ * bas-droite) et la rendait inopérante.
+ *
+ * La spirale est teintée via mask + background-color (une SVG en background n'hérite pas de currentColor ;
+ * le masque, si).
+ */
+
+@cth-spiral: "/modules/cth-base/assets/spiral.svg";
+
+.co.actor.coc2 {
+  // Ancre les filigranes ; z-index négatif des pseudos → au-dessus du parchemin, sous le contenu.
+  .window-content {
+    position: relative;
+  }
+
+  // Filigrane : grande spirale encre pâle, coin bas-droite du contenu — reste DANS la fenêtre.
+  .window-content::after {
+    content: "";
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    width: 320px;
+    height: 320px;
+    max-width: 60%;
+    background-color: #14110d;
+    -webkit-mask: url("@{cth-spiral}") no-repeat right bottom / contain;
+    mask: url("@{cth-spiral}") no-repeat right bottom / contain;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  // Filigrane crème dans le bandeau, sous les échelles (« près des échelles »), en watermark discret.
+  .sheet-header {
+    position: relative;
+  }
+  .sheet-header::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: 150px;
+    height: 150px;
+    background-color: var(--co-text-light);
+    -webkit-mask: url("@{cth-spiral}") no-repeat left bottom / contain;
+    mask: url("@{cth-spiral}") no-repeat left bottom / contain;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  }
+}

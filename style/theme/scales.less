@@ -1,0 +1,139 @@
+/*
+ * FORME + COULEURS DES ÉCHELLES — hexagones réguliers bordés de noir, jalons cerclés d'un tourbillon
+ *
+ * IMPORTANT — spécificité : coc2-base/style/sheet.less qualifie ses échelons
+ * `.co.actor.coc2 .health-bar .health-step` / `.second-scale-bar .scale-step` (il inclut la barre).
+ * On reprend la MÊME chaîne, sinon nos règles ont une spécificité plus faible et coc2 l'emporte. À
+ * spécificité égale, cth étant chargé en dernier, on gagne.
+ *
+ * BORDURE NOIRE — un `border` ne suit pas le clip-path, et un `drop-shadow` sur le même élément est
+ * ROGNÉ par le clip-path (donc invisible). On emploie la technique « deux couches » de coc2 : l'élément
+ * est un hexagone NOIR (= la bordure) et un ::before réduit porte la couleur réelle. Le ::before en
+ * z-index négatif se peint au-dessus du fond noir de l'élément mais sous le chiffre.
+ *
+ * S'applique aux DEUX thèmes (la forme ne dépend pas du mode clair/sombre).
+ */
+
+@cth-health: #7c1414; // Santé : rouge sang
+@cth-conscience: #4a2c63; // Conscience : violet
+@cth-spiral-mark: "/modules/cth-base/assets/spiral-mark.svg";
+
+// Hexagone RÉGULIER (pointes en haut/bas). Régulier seulement si la case a un ratio largeur/hauteur de
+// √3/2 : on fixe donc la case par sa hauteur + aspect-ratio (sinon la case large aplatit l'hexagone).
+@cth-hex: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+.co.actor.coc2 {
+  // Répartit les cases (désormais de largeur fixe) sur toute la largeur du ruban
+  .health-bar .health-scale,
+  .second-scale-bar .scale-steps {
+    justify-content: space-between;
+    gap: 3px;
+  }
+
+  // Taille commune à toutes les cases : hexagone régulier via aspect-ratio √3/2 ≈ 0.8660254.
+  // Chiffre centré par flexbox (le line-height hérité de coc2 le décentrait verticalement).
+  .health-bar .health-step,
+  .second-scale-bar .scale-step {
+    flex: 0 0 auto;
+    width: auto;
+    height: 1.9em;
+    aspect-ratio: 0.8660254;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  // Hexagones (hors jalons) : hexagone NOIR + ::before réduit portant la couleur → liseré noir tout autour
+  .health-bar .health-step:not(.milestone),
+  .second-scale-bar .scale-step:not(.milestone) {
+    clip-path: @cth-hex;
+    background-color: #000; // = bordure noire
+    position: relative;
+    z-index: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 2px; // épaisseur du liseré noir
+      clip-path: @cth-hex; // même hexagone, réduit
+      background-color: var(--co-surface); // fond par défaut (échelon non atteint)
+      z-index: -1; // au-dessus du fond noir de l'élément, sous le chiffre
+    }
+  }
+
+  // Remplissage : rouge sang (Santé) / violet (Conscience), reporté sur le ::before
+  .health-bar .health-step.filled:not(.milestone) {
+    color: var(--co-text-light);
+    &::before {
+      background-color: @cth-health;
+    }
+  }
+  .second-scale-bar .scale-step.filled:not(.milestone) {
+    color: var(--co-text-light);
+    &::before {
+      background-color: @cth-conscience;
+    }
+  }
+
+  // Jalons 5/10/15/20 : le CHIFFRE reste visible, cerclé d'un TOURBILLON (comme la fiche imprimée).
+  // Pas d'hexagone ni de fond : la spirale (à centre creux) est posée en ::before DERRIÈRE le chiffre
+  // (le masque teinte la spirale sans masquer le texte, porté par l'élément). overflow:visible +
+  // clip-path:none pour que la spirale puisse déborder largement autour de la case.
+  .health-bar .health-step.milestone,
+  .second-scale-bar .scale-step.milestone {
+    clip-path: none;
+    overflow: visible;
+    background-color: transparent;
+    color: var(--co-sheet-accent); // chiffre encre, lisible
+    font-size: 0.82rem;
+    position: relative;
+    z-index: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -50%; // grand anneau autour du chiffre
+      background-color: var(--co-sheet-accent); // tourbillon encre par défaut (échelon non atteint)
+      opacity: 0.75;
+      -webkit-mask: url("@{cth-spiral-mark}") no-repeat center / contain;
+      mask: url("@{cth-spiral-mark}") no-repeat center / contain;
+      z-index: -1; // derrière le chiffre
+      pointer-events: none;
+    }
+  }
+
+  // Jalon atteint : le tourbillon prend la couleur de l'échelle (le chiffre reste encre, lisible)
+  .health-bar .health-step.milestone.filled::before {
+    background-color: @cth-health;
+    opacity: 1;
+  }
+  .second-scale-bar .scale-step.milestone.filled::before {
+    background-color: @cth-conscience;
+    opacity: 1;
+  }
+}
+
+/*
+ * THÈME SOMBRE — l'en-tête (où sont les échelles) est un bloc NOIR. La bordure noire des hexagones et
+ * l'encre des jalons y seraient invisibles : on les passe en clair.
+ * Écrit après le bloc ci-dessus pour l'emporter à spécificité égale sur les règles de couleur des jalons.
+ */
+.theme-dark .co.actor.coc2 {
+  // Bordure des hexagones en clair (= fond de l'élément, la couleur réelle restant sur le ::before)
+  .health-bar .health-step:not(.milestone),
+  .second-scale-bar .scale-step:not(.milestone) {
+    background-color: var(--co-text-light);
+  }
+
+  // Jalons 5/10/15/20 : chiffre ET tourbillon en clair
+  .health-bar .health-step.milestone,
+  .second-scale-bar .scale-step.milestone {
+    color: var(--co-text-light);
+
+    &::before {
+      background-color: var(--co-text-light);
+      opacity: 1;
+    }
+  }
+}

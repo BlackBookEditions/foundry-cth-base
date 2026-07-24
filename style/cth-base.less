@@ -1,7 +1,12 @@
 // Point d'entrée LESS de cth-base.
-// Ajouter ici les @import des partials (global, sheet, journal…) au fur et à mesure.
+// Thème visuel « Parchemin fidèle » de la fiche Cthulhu Origines : surcouche de couleurs, fond,
+// polices et décor par-dessus le thème monochrome de coc2-base. Chargée après coc2-base, donc
+// gagnante à spécificité égale — aucun changement de position, purement habillage.
 
-// Placeholder : garantit une compilation valide tant qu'aucun style n'est défini.
-.cth-base-loaded {
-  display: none;
-}
+@import "./theme/palette.less"; // variables --co-* (parchemin, bandeaux noir encre…)
+@import "./theme/typography.less"; // nom manuscrit + en-têtes serif de grimoire
+@import "./theme/sheet.less"; // rubans Santé/Conscience + contraste du contenu parchemin
+@import "./theme/decor.less"; // filigrane + spirales tentaculaires
+@import "./theme/scales.less"; // échelles : hexagones + jalons 5/10/15/20 en tourbillon
+@import "./theme/header-light.less"; // thème clair : fond gris + en-tête parchemin (B) ; sombre = bloc noir (A)
+@import "./theme/item.less"; // fiches d'objet : reprise du thème (fond, polices, contraste)

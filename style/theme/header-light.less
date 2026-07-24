@@ -1,0 +1,61 @@
+/*
+ * EN-TÊTE EN THÈME CLAIR — rendu « B » (parchemin)
+ *
+ * Choix du joueur : thème Foundry CLAIR → en-tête sur parchemin (seuls les bandeaux restent noirs) ;
+ * thème Foundry SOMBRE → en-tête en bloc noir (« A », comportement hérité de coc2-base, non touché ici).
+ *
+ * On ne surcharge donc que la branche .theme-light : le fond de l'en-tête devient transparent (la texture
+ * parchemin de la fenêtre transparaît, cf. theme/sheet.less), et le texte repasse en encre — coc2-base
+ * (contrast.less) imposait du crème sur un en-tête sombre. Les cases de caractéristiques et les boîtes de
+ * libellé d'échelle gardent, elles, leur fond noir et leur texte crème : ce sont les « bandeaux ».
+ *
+ * Chargé après theme/decor.less pour que la surcharge du filigrane d'en-tête (::before) l'emporte.
+ */
+
+/*
+ * Fond GRIS CLAIR (thème clair uniquement) : au lieu du parchemin crème, on tire la fiche vers un gris
+ * clair neutre. On conserve la micro-texture du fond en la désaturant (background-blend-mode: luminosity
+ * sur une couleur grise → la texture ne garde que sa luminosité, la teinte devient grise). Les surfaces
+ * de cases/champs (--co-surface) passent aussi au gris clair pour rester cohérentes.
+ */
+.theme-light .co.actor.coc2 {
+  --co-surface: #e6e6e9; // cases carac., échelons vides, champs → gris clair
+  --co-window-content: rgba(230, 230, 233, 0.4);
+
+  .window-content {
+    background-color: #e7e7ea;
+    background-blend-mode: luminosity;
+  }
+}
+
+.theme-light .co.actor.coc2 .window-content .sheet-header {
+  background-color: transparent;
+  color: var(--co-text-dark);
+
+  // Texte encre sur le parchemin. Spécificité supérieure aux règles de contrast.less de coc2-base.
+  h4,
+  label,
+  span,
+  p,
+  a,
+  .name,
+  input.name,
+  .health-state,
+  .scale-state {
+    color: var(--co-text-dark);
+  }
+
+  // Bandeaux noirs conservés (fond sombre issu de la base) : on ré-impose le texte crème. Écrit APRÈS
+  // la règle générique ci-dessus pour l'emporter à spécificité égale.
+  .ability-id,
+  .ability-id *,
+  .health-label,
+  .scale-label {
+    color: var(--co-text-light);
+  }
+
+  // Filigrane de spirale de l'en-tête : en encre sur le parchemin clair (crème par défaut pour le thème sombre)
+  &::before {
+    background-color: #14110d;
+  }
+}

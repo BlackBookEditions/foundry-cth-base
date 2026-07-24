@@ -1,5 +1,418 @@
-/* Style compilé de cth-base — placeholder.
-   Régénérer depuis style/cth-base.less via `npm run compile`. */
-.cth-base-loaded {
-  display: none;
+/*
+ * PALETTE DU THÈME CTH — « Parchemin fidèle »
+ *
+ * Surcharge de la palette monochrome de coc2-base (modules/coc2-base/style/palette.less), qui elle-même
+ * surcharge celle du système (systems/co2/styles/palette.less). On redéclare les mêmes sélecteurs de
+ * thème ; la feuille de cth-base étant chargée en dernier, ces valeurs l'emportent.
+ *
+ * UN SEUL JEU DE VALEURS pour les deux modes (comme coc2-base) : l'habillage parchemin est identique en
+ * thème Foundry clair et sombre. Le texte du contenu (posé sur parchemin clair) est forcé sombre dans les
+ * deux thèmes par theme/sheet.less.
+ *
+ * NE SONT PAS SURCHARGÉES les variables --co-result-* : succès, échec, critique et fumble portent une
+ * information de lecture, elles restent colorées.
+ */
+.theme-light,
+.theme-dark {
+  --co-sheet-accent: #14110d;
+  --co-sheet-accent-alt: #241d14;
+  --co-surface: #efe7d3;
+  --co-encounter-accent: #2b1414cc;
+  --co-window-content: rgba(233, 224, 204, 0.35);
+  --co-text-light: #f4ecd8;
+  --co-text-dark: #1c1710;
+  --co-green: #5c6b3a;
+  --co-grey: #b9ad93;
+  --co-stat-attack: #4a1414;
+  --co-stat-initiative: #241d14;
+  --co-stat-defense: #1c2a33;
+  --co-stat-health: #3a1414;
+  --co-stat-damages: #2e2436;
+  --co-stat-resource: #23302a;
+  --co-chat-skill: #23303b;
+  --co-chat-attack: #3a1a12;
+  --co-chat-damages: #4a1414;
+  --co-chat-heal: #233a26;
+  --co-chat-rest: #33381f;
+  --co-chat-save: #2e2436;
+  --co-chat-item: #3a2f1c;
+  --co-chat-shadow: #b9ad93;
+  --co-dialog-attack-bg: rgba(58, 20, 20, 0.5);
+  --co-dialog-skill-bg: rgba(36, 40, 55, 0.45);
+  --co-dialog-attack-accent: #2b0d0d;
+  --co-dialog-attack-surface: #3a1414;
+  --co-dialog-skill-accent: #241d14;
+  --co-dialog-skill-highlight: #6b5a3a;
+  --co-dialog-muted: #b9ad93;
+  --co-dialog-overlay: #f4ecd857;
+  --co-item-capacity-dark: #3a1520;
+  --co-item-capacity-light: #7a2e46;
+  --co-item-equipment-dark: #4a3418;
+  --co-item-equipment-light: #8a6a2c;
+  --co-item-container-dark: #4a3418;
+  --co-item-container-light: #8a6a2c;
+  --co-item-feature-dark: #1a3540;
+  --co-item-feature-light: #366b7a;
+  --co-item-path-dark: #2e1f3a;
+  --co-item-path-light: #5a3a7a;
+  --co-item-profile-dark: #1c2340;
+  --co-item-profile-light: #3a4a7a;
+  --co-item-attack-dark: #3a0d0d;
+  --co-item-attack-light: #7a2424;
+}
+/*
+ * POLICES DU THÈME CTH
+ *
+ * Les @font-face (Alana, Mendel, Mendl Serif Dusk Semibold) sont déjà déclarés globalement par
+ * coc2-base (style/polices.less) en chemins relatifs à sa propre feuille. On les redéclare ici en
+ * chemins ABSOLUS Foundry, comme filet de sécurité si l'ordre de chargement changeait.
+ *
+ * Corps de texte INCHANGÉ (Hypatia, --font-primary de coc2-base). On n'affecte que le nom du
+ * personnage (manuscrit) et les en-têtes / libellés (serif de grimoire).
+ */
+@font-face {
+  font-family: "Alana";
+  src: url("/modules/coc2-base/fonts/alana.ttf");
+}
+@font-face {
+  font-family: "Mendl Serif Dusk Semibold";
+  src: url("/modules/coc2-base/fonts/mendl_serif_dusk_semb.ttf");
+}
+@font-face {
+  font-family: "Mendel";
+  src: url("/modules/coc2-base/fonts/mendl_serif_dusk.ttf");
+}
+.co.actor.coc2 .sheet-header .name {
+  font-family: "Alana", cursive;
+  font-size: 2.6rem;
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+}
+.co.actor.coc2 .sheet-header .health-label,
+.co.actor.coc2 .sheet-header .scale-label,
+.co.actor.coc2 .ability-id,
+.co.actor.coc2 .sheet-tabs [data-tab],
+.co.actor.coc2 .section-container .section-header,
+.co.actor.coc2 .form-header,
+.co.actor.coc2 h4 {
+  font-family: "Mendl Serif Dusk Semibold", "Mendel", serif;
+  letter-spacing: 0.3px;
+}
+/*
+ * FOND PARCHEMIN + CONTRASTE DU CONTENU
+ *
+ * (La forme et les couleurs des échelles sont dans theme/scales.less, avec la spécificité de coc2-base.)
+ */
+.co.actor.coc2 .window-content {
+  background-image: var(--background-image-standard);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/*
+ * CONTRASTE. Le contenu des onglets devient parchemin CLAIR dans les deux thèmes Foundry.
+ * coc2-base/contrast.less ne force le texte clair que pour .co.item ; pour l'acteur, co2 fait varier
+ * la couleur du texte selon .theme-light / .theme-dark, ce qui rendrait le texte clair (donc illisible)
+ * sur notre parchemin en thème Foundry sombre. On force donc le texte SOMBRE sur le contenu d'onglet de
+ * la fiche d'acteur, dans les deux thèmes, puis on rend leur texte clair aux bandeaux de section (posés,
+ * eux, sur un fond sombre de la palette).
+ */
+.theme-light .co.actor.coc2 .window-content .tab,
+.theme-dark .co.actor.coc2 .window-content .tab,
+.theme-light .co.actor.coc2 .window-content .tab h4,
+.theme-dark .co.actor.coc2 .window-content .tab h4,
+.theme-light .co.actor.coc2 .window-content .tab label,
+.theme-dark .co.actor.coc2 .window-content .tab label,
+.theme-light .co.actor.coc2 .window-content .tab span,
+.theme-dark .co.actor.coc2 .window-content .tab span,
+.theme-light .co.actor.coc2 .window-content .tab p,
+.theme-dark .co.actor.coc2 .window-content .tab p,
+.theme-light .co.actor.coc2 .window-content .tab li,
+.theme-dark .co.actor.coc2 .window-content .tab li,
+.theme-light .co.actor.coc2 .window-content .tab legend,
+.theme-dark .co.actor.coc2 .window-content .tab legend {
+  color: var(--co-text-dark);
+}
+.theme-light .co.actor.coc2 .window-content .tab .section-container .section-header,
+.theme-dark .co.actor.coc2 .window-content .tab .section-container .section-header,
+.theme-light .co.actor.coc2 .window-content .tab .section-container .section-header *,
+.theme-dark .co.actor.coc2 .window-content .tab .section-container .section-header *,
+.theme-light .co.actor.coc2 .window-content .tab .form-header,
+.theme-dark .co.actor.coc2 .window-content .tab .form-header,
+.theme-light .co.actor.coc2 .window-content .tab .form-header *,
+.theme-dark .co.actor.coc2 .window-content .tab .form-header * {
+  color: var(--co-text-light);
+}
+.theme-light .co.actor.coc2 .window-content .tab .items-container-header,
+.theme-dark .co.actor.coc2 .window-content .tab .items-container-header,
+.theme-light .co.actor.coc2 .window-content .tab .items-container-header *,
+.theme-dark .co.actor.coc2 .window-content .tab .items-container-header * {
+  color: var(--co-surface);
+}
+/*
+ * DÉCOR — filigrane de fond + spirales tentaculaires
+ *
+ * Purement décoratif : pointer-events:none, et surtout STRICTEMENT à l'intérieur de .window-content,
+ * en z-index NÉGATIF. Le décor est ainsi peint au-dessus du fond parchemin mais SOUS le contenu, sans
+ * qu'on ait à remonter le contenu — remonter le contenu (ou déborder hors de la fenêtre) recouvrait la
+ * poignée de redimensionnement de la fenêtre (.window-resize-handle, sœur de .window-content, au coin
+ * bas-droite) et la rendait inopérante.
+ *
+ * La spirale est teintée via mask + background-color (une SVG en background n'hérite pas de currentColor ;
+ * le masque, si).
+ */
+.co.actor.coc2 .window-content {
+  position: relative;
+}
+.co.actor.coc2 .window-content::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 320px;
+  height: 320px;
+  max-width: 60%;
+  background-color: #14110d;
+  -webkit-mask: url("/modules/cth-base/assets/spiral.svg") no-repeat right bottom / contain;
+  mask: url("/modules/cth-base/assets/spiral.svg") no-repeat right bottom / contain;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
+.co.actor.coc2 .sheet-header {
+  position: relative;
+}
+.co.actor.coc2 .sheet-header::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  width: 150px;
+  height: 150px;
+  background-color: var(--co-text-light);
+  -webkit-mask: url("/modules/cth-base/assets/spiral.svg") no-repeat left bottom / contain;
+  mask: url("/modules/cth-base/assets/spiral.svg") no-repeat left bottom / contain;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+/*
+ * FORME + COULEURS DES ÉCHELLES — hexagones réguliers bordés de noir, jalons cerclés d'un tourbillon
+ *
+ * IMPORTANT — spécificité : coc2-base/style/sheet.less qualifie ses échelons
+ * `.co.actor.coc2 .health-bar .health-step` / `.second-scale-bar .scale-step` (il inclut la barre).
+ * On reprend la MÊME chaîne, sinon nos règles ont une spécificité plus faible et coc2 l'emporte. À
+ * spécificité égale, cth étant chargé en dernier, on gagne.
+ *
+ * BORDURE NOIRE — un `border` ne suit pas le clip-path, et un `drop-shadow` sur le même élément est
+ * ROGNÉ par le clip-path (donc invisible). On emploie la technique « deux couches » de coc2 : l'élément
+ * est un hexagone NOIR (= la bordure) et un ::before réduit porte la couleur réelle. Le ::before en
+ * z-index négatif se peint au-dessus du fond noir de l'élément mais sous le chiffre.
+ *
+ * S'applique aux DEUX thèmes (la forme ne dépend pas du mode clair/sombre).
+ */
+.co.actor.coc2 .health-bar .health-scale,
+.co.actor.coc2 .second-scale-bar .scale-steps {
+  justify-content: space-between;
+  gap: 3px;
+}
+.co.actor.coc2 .health-bar .health-step,
+.co.actor.coc2 .second-scale-bar .scale-step {
+  flex: 0 0 auto;
+  width: auto;
+  height: 1.9em;
+  aspect-ratio: 0.8660254;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.co.actor.coc2 .health-bar .health-step:not(.milestone),
+.co.actor.coc2 .second-scale-bar .scale-step:not(.milestone) {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: #000;
+  position: relative;
+  z-index: 0;
+}
+.co.actor.coc2 .health-bar .health-step:not(.milestone)::before,
+.co.actor.coc2 .second-scale-bar .scale-step:not(.milestone)::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: var(--co-surface);
+  z-index: -1;
+}
+.co.actor.coc2 .health-bar .health-step.filled:not(.milestone) {
+  color: var(--co-text-light);
+}
+.co.actor.coc2 .health-bar .health-step.filled:not(.milestone)::before {
+  background-color: #7c1414;
+}
+.co.actor.coc2 .second-scale-bar .scale-step.filled:not(.milestone) {
+  color: var(--co-text-light);
+}
+.co.actor.coc2 .second-scale-bar .scale-step.filled:not(.milestone)::before {
+  background-color: #4a2c63;
+}
+.co.actor.coc2 .health-bar .health-step.milestone,
+.co.actor.coc2 .second-scale-bar .scale-step.milestone {
+  clip-path: none;
+  overflow: visible;
+  background-color: transparent;
+  color: var(--co-sheet-accent);
+  font-size: 0.82rem;
+  position: relative;
+  z-index: 0;
+}
+.co.actor.coc2 .health-bar .health-step.milestone::before,
+.co.actor.coc2 .second-scale-bar .scale-step.milestone::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background-color: var(--co-sheet-accent);
+  opacity: 0.75;
+  -webkit-mask: url("/modules/cth-base/assets/spiral-mark.svg") no-repeat center / contain;
+  mask: url("/modules/cth-base/assets/spiral-mark.svg") no-repeat center / contain;
+  z-index: -1;
+  pointer-events: none;
+}
+.co.actor.coc2 .health-bar .health-step.milestone.filled::before {
+  background-color: #7c1414;
+  opacity: 1;
+}
+.co.actor.coc2 .second-scale-bar .scale-step.milestone.filled::before {
+  background-color: #4a2c63;
+  opacity: 1;
+}
+/*
+ * THÈME SOMBRE — l'en-tête (où sont les échelles) est un bloc NOIR. La bordure noire des hexagones et
+ * l'encre des jalons y seraient invisibles : on les passe en clair.
+ * Écrit après le bloc ci-dessus pour l'emporter à spécificité égale sur les règles de couleur des jalons.
+ */
+.theme-dark .co.actor.coc2 .health-bar .health-step:not(.milestone),
+.theme-dark .co.actor.coc2 .second-scale-bar .scale-step:not(.milestone) {
+  background-color: var(--co-text-light);
+}
+.theme-dark .co.actor.coc2 .health-bar .health-step.milestone,
+.theme-dark .co.actor.coc2 .second-scale-bar .scale-step.milestone {
+  color: var(--co-text-light);
+}
+.theme-dark .co.actor.coc2 .health-bar .health-step.milestone::before,
+.theme-dark .co.actor.coc2 .second-scale-bar .scale-step.milestone::before {
+  background-color: var(--co-text-light);
+  opacity: 1;
+}
+/*
+ * EN-TÊTE EN THÈME CLAIR — rendu « B » (parchemin)
+ *
+ * Choix du joueur : thème Foundry CLAIR → en-tête sur parchemin (seuls les bandeaux restent noirs) ;
+ * thème Foundry SOMBRE → en-tête en bloc noir (« A », comportement hérité de coc2-base, non touché ici).
+ *
+ * On ne surcharge donc que la branche .theme-light : le fond de l'en-tête devient transparent (la texture
+ * parchemin de la fenêtre transparaît, cf. theme/sheet.less), et le texte repasse en encre — coc2-base
+ * (contrast.less) imposait du crème sur un en-tête sombre. Les cases de caractéristiques et les boîtes de
+ * libellé d'échelle gardent, elles, leur fond noir et leur texte crème : ce sont les « bandeaux ».
+ *
+ * Chargé après theme/decor.less pour que la surcharge du filigrane d'en-tête (::before) l'emporte.
+ */
+/*
+ * Fond GRIS CLAIR (thème clair uniquement) : au lieu du parchemin crème, on tire la fiche vers un gris
+ * clair neutre. On conserve la micro-texture du fond en la désaturant (background-blend-mode: luminosity
+ * sur une couleur grise → la texture ne garde que sa luminosité, la teinte devient grise). Les surfaces
+ * de cases/champs (--co-surface) passent aussi au gris clair pour rester cohérentes.
+ */
+.theme-light .co.actor.coc2 {
+  --co-surface: #e6e6e9;
+  --co-window-content: rgba(230, 230, 233, 0.4);
+}
+.theme-light .co.actor.coc2 .window-content {
+  background-color: #e7e7ea;
+  background-blend-mode: luminosity;
+}
+.theme-light .co.actor.coc2 .window-content .sheet-header {
+  background-color: transparent;
+  color: var(--co-text-dark);
+}
+.theme-light .co.actor.coc2 .window-content .sheet-header h4,
+.theme-light .co.actor.coc2 .window-content .sheet-header label,
+.theme-light .co.actor.coc2 .window-content .sheet-header span,
+.theme-light .co.actor.coc2 .window-content .sheet-header p,
+.theme-light .co.actor.coc2 .window-content .sheet-header a,
+.theme-light .co.actor.coc2 .window-content .sheet-header .name,
+.theme-light .co.actor.coc2 .window-content .sheet-header input.name,
+.theme-light .co.actor.coc2 .window-content .sheet-header .health-state,
+.theme-light .co.actor.coc2 .window-content .sheet-header .scale-state {
+  color: var(--co-text-dark);
+}
+.theme-light .co.actor.coc2 .window-content .sheet-header .ability-id,
+.theme-light .co.actor.coc2 .window-content .sheet-header .ability-id *,
+.theme-light .co.actor.coc2 .window-content .sheet-header .health-label,
+.theme-light .co.actor.coc2 .window-content .sheet-header .scale-label {
+  color: var(--co-text-light);
+}
+.theme-light .co.actor.coc2 .window-content .sheet-header::before {
+  background-color: #14110d;
+}
+/*
+ * FICHES D'OBJET — reprise du thème des acteurs (fond parchemin/gris, polices, contraste)
+ *
+ * Les fiches d'objet ne portent PAS de classe .coc2 (coc2-base ne les sous-classe pas) : on cible
+ * `.co.item` / `.co.application.sheet.item`. La palette --co-* (couleurs de type d'objet, sépia) leur
+ * est déjà appliquée globalement ; on garde donc les en-têtes COLORÉS PAR TYPE (l'identité de l'objet,
+ * équivalent du bandeau noir des acteurs) et on ajoute ici le fond, les polices et le contraste.
+ */
+.co.item .window-content {
+  background-image: var(--background-image-standard);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.co.item .sheet-header .name input,
+.co.item .form-header,
+.co.item fieldset legend,
+.co.item h4 {
+  font-family: "Mendl Serif Dusk Semibold", "Mendel", serif;
+}
+/*
+ * Thème clair : fond GRIS clair (comme les acteurs). La micro-texture est désaturée en gris via
+ * background-blend-mode: luminosity. --co-surface (pastille de type, champs) passe aussi au gris.
+ */
+.theme-light .co.item {
+  --co-surface: #e6e6e9;
+  --co-window-content: rgba(230, 230, 233, 0.4);
+}
+.theme-light .co.item .window-content {
+  background-color: #e7e7ea;
+  background-blend-mode: luminosity;
+}
+/*
+ * Contraste. Le contenu devient parchemin CLAIR dans les deux thèmes ; coc2-base/contrast.less passe le
+ * texte du contenu en CLAIR en thème sombre (fond translucide sur cadre sombre) → il deviendrait illisible
+ * sur notre parchemin. On force donc le texte SOMBRE dans les deux thèmes. La chaîne
+ * `.co.application.sheet.item` porte une spécificité ≥ à celle de contrast.less (qui inclut un
+ * :not(:has(...))), et cth est chargé après → on gagne, en mode lecture ET édition. Les bandeaux de
+ * section (.form-header, posés sur un fond de type coloré) gardent leur texte clair.
+ */
+.theme-light .co.application.sheet.item .window-content .tab,
+.theme-dark .co.application.sheet.item .window-content .tab,
+.theme-light .co.application.sheet.item .window-content .tab h4,
+.theme-dark .co.application.sheet.item .window-content .tab h4,
+.theme-light .co.application.sheet.item .window-content .tab label,
+.theme-dark .co.application.sheet.item .window-content .tab label,
+.theme-light .co.application.sheet.item .window-content .tab span,
+.theme-dark .co.application.sheet.item .window-content .tab span,
+.theme-light .co.application.sheet.item .window-content .tab p,
+.theme-dark .co.application.sheet.item .window-content .tab p,
+.theme-light .co.application.sheet.item .window-content .tab li,
+.theme-dark .co.application.sheet.item .window-content .tab li,
+.theme-light .co.application.sheet.item .window-content .tab legend,
+.theme-dark .co.application.sheet.item .window-content .tab legend {
+  color: var(--co-text-dark);
+}
+.theme-light .co.application.sheet.item .window-content .tab .form-header,
+.theme-dark .co.application.sheet.item .window-content .tab .form-header,
+.theme-light .co.application.sheet.item .window-content .tab .form-header *,
+.theme-dark .co.application.sheet.item .window-content .tab .form-header * {
+  color: var(--co-text-light);
 }

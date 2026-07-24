@@ -1,0 +1,47 @@
+/*
+ * POLICES DU THÈME CTH
+ *
+ * Les @font-face (Alana, Mendel, Mendl Serif Dusk Semibold) sont déjà déclarés globalement par
+ * coc2-base (style/polices.less) en chemins relatifs à sa propre feuille. On les redéclare ici en
+ * chemins ABSOLUS Foundry, comme filet de sécurité si l'ordre de chargement changeait.
+ *
+ * Corps de texte INCHANGÉ (Hypatia, --font-primary de coc2-base). On n'affecte que le nom du
+ * personnage (manuscrit) et les en-têtes / libellés (serif de grimoire).
+ */
+
+@font-face {
+  font-family: "Alana";
+  src: url("/modules/coc2-base/fonts/alana.ttf");
+}
+@font-face {
+  font-family: "Mendl Serif Dusk Semibold";
+  src: url("/modules/coc2-base/fonts/mendl_serif_dusk_semb.ttf");
+}
+@font-face {
+  font-family: "Mendel";
+  src: url("/modules/coc2-base/fonts/mendl_serif_dusk.ttf");
+}
+
+@cth-heading: "Mendl Serif Dusk Semibold", "Mendel", serif;
+
+.co.actor.coc2 {
+  // Nom du personnage : manuscrit. Garde sa couleur crème (imposée par contrast.less sur le bandeau).
+  .sheet-header .name {
+    font-family: "Alana", cursive;
+    font-size: 2.6rem;
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+  }
+
+  // En-têtes, libellés d'échelle, identifiants de caractéristique et onglets : serif de vieux grimoire
+  .sheet-header .health-label,
+  .sheet-header .scale-label,
+  .ability-id,
+  .sheet-tabs [data-tab],
+  .section-container .section-header,
+  .form-header,
+  h4 {
+    font-family: @cth-heading;
+    letter-spacing: 0.3px;
+  }
+}

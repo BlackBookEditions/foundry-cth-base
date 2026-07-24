@@ -1,0 +1,54 @@
+/*
+ * FOND PARCHEMIN + CONTRASTE DU CONTENU
+ *
+ * (La forme et les couleurs des échelles sont dans theme/scales.less, avec la spécificité de coc2-base.)
+ */
+
+.co.actor.coc2 {
+  // Texture parchemin sur TOUTE la fiche (header + contenu). Garantit que l'en-tête transparent du
+  // thème clair (rendu B) est continu avec le contenu, et donne le fond parchemin du thème sombre.
+  .window-content {
+    background-image: var(--background-image-standard);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+/*
+ * CONTRASTE. Le contenu des onglets devient parchemin CLAIR dans les deux thèmes Foundry.
+ * coc2-base/contrast.less ne force le texte clair que pour .co.item ; pour l'acteur, co2 fait varier
+ * la couleur du texte selon .theme-light / .theme-dark, ce qui rendrait le texte clair (donc illisible)
+ * sur notre parchemin en thème Foundry sombre. On force donc le texte SOMBRE sur le contenu d'onglet de
+ * la fiche d'acteur, dans les deux thèmes, puis on rend leur texte clair aux bandeaux de section (posés,
+ * eux, sur un fond sombre de la palette).
+ */
+.theme-light .co.actor.coc2 .window-content .tab,
+.theme-dark .co.actor.coc2 .window-content .tab {
+  &,
+  h4,
+  label,
+  span,
+  p,
+  li,
+  legend {
+    color: var(--co-text-dark);
+  }
+
+  // Barres sombres du contenu (fond --co-sheet-accent-alt) → on ré-impose le texte clair. Écrit APRÈS
+  // la règle générique ci-dessus pour l'emporter. Concerne :
+  //  - les en-têtes de section (.section-header, ex. « Actions ») ;
+  //  - les en-têtes de conteneurs (.items-container-header) : catégories d'INVENTAIRE et têtes de VOIES,
+  //    texte système en var(--co-surface) sur barre sombre ;
+  //  - les en-têtes pliables de la Biographie (.form-header).
+  .section-container .section-header,
+  .section-container .section-header *,
+  .form-header,
+  .form-header * {
+    color: var(--co-text-light);
+  }
+  .items-container-header,
+  .items-container-header * {
+    color: var(--co-surface);
+  }
+}

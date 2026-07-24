@@ -1,0 +1,69 @@
+/*
+ * FICHES D'OBJET — reprise du thème des acteurs (fond parchemin/gris, polices, contraste)
+ *
+ * Les fiches d'objet ne portent PAS de classe .coc2 (coc2-base ne les sous-classe pas) : on cible
+ * `.co.item` / `.co.application.sheet.item`. La palette --co-* (couleurs de type d'objet, sépia) leur
+ * est déjà appliquée globalement ; on garde donc les en-têtes COLORÉS PAR TYPE (l'identité de l'objet,
+ * équivalent du bandeau noir des acteurs) et on ajoute ici le fond, les polices et le contraste.
+ */
+
+@cth-heading: "Mendl Serif Dusk Semibold", "Mendel", serif;
+
+.co.item {
+  // Fond parchemin sur tout le contenu (tous les types, y compris feature/path/profile qui n'ont pas
+  // de fond dans co2). L'image (opaque) recouvre le --co-window-content translucide posé par co2.
+  .window-content {
+    background-image: var(--background-image-standard);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  // Polices thématiques : nom de l'objet + en-têtes de section en serif de grimoire (corps inchangé)
+  .sheet-header .name input,
+  .form-header,
+  fieldset legend,
+  h4 {
+    font-family: @cth-heading;
+  }
+}
+
+/*
+ * Thème clair : fond GRIS clair (comme les acteurs). La micro-texture est désaturée en gris via
+ * background-blend-mode: luminosity. --co-surface (pastille de type, champs) passe aussi au gris.
+ */
+.theme-light .co.item {
+  --co-surface: #e6e6e9;
+  --co-window-content: rgba(230, 230, 233, 0.4);
+
+  .window-content {
+    background-color: #e7e7ea;
+    background-blend-mode: luminosity;
+  }
+}
+
+/*
+ * Contraste. Le contenu devient parchemin CLAIR dans les deux thèmes ; coc2-base/contrast.less passe le
+ * texte du contenu en CLAIR en thème sombre (fond translucide sur cadre sombre) → il deviendrait illisible
+ * sur notre parchemin. On force donc le texte SOMBRE dans les deux thèmes. La chaîne
+ * `.co.application.sheet.item` porte une spécificité ≥ à celle de contrast.less (qui inclut un
+ * :not(:has(...))), et cth est chargé après → on gagne, en mode lecture ET édition. Les bandeaux de
+ * section (.form-header, posés sur un fond de type coloré) gardent leur texte clair.
+ */
+.theme-light .co.application.sheet.item .window-content .tab,
+.theme-dark .co.application.sheet.item .window-content .tab {
+  &,
+  h4,
+  label,
+  span,
+  p,
+  li,
+  legend {
+    color: var(--co-text-dark);
+  }
+
+  .form-header,
+  .form-header * {
+    color: var(--co-text-light);
+  }
+}
