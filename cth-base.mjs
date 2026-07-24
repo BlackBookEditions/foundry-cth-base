@@ -1,4 +1,6 @@
 import { CTH_CONFIG } from "./module/config/cth.mjs"
+import CTHEncounterData from "./module/models/encounter.mjs"
+import CTHEncounterSheet from "./module/applications/encounter-sheet.mjs"
 
 /**
  * Configuration publique du module. Exposée dès le chargement du script, et non dans le hook init,
@@ -45,6 +47,22 @@ Hooks.once("init", () => {
     CONFIG.COC2BASE.secondScale.states[id].name = `CTHBASE.consciousness.status.${key}`
     CONFIG.COC2BASE.secondScale.states[id].description = `CTHBASE.consciousness.status.${key}Description`
   }
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // Adversaires : modèle et fiche cth surchargeant ceux de coc2-base.
+  //
+  // Sûr ici : cth-base requiert coc2-base, donc son script est chargé après et son hook init est
+  // enregistré après celui de coc2-base. Les callbacks init s'exécutant dans l'ordre d'enregistrement,
+  // coc2-base a déjà posé CONFIG.Actor.dataModels.encounter et enregistré sa fiche ; on repasse derrière.
+  // Le data model est enregistré au init (et non au setup), pour être disponible avant la préparation
+  // des acteurs. Ajoute le Rang d'horreur des créatures et l'Échelle de conscience des antagonistes.
+  // ─────────────────────────────────────────────────────────────────────────────
+  CONFIG.Actor.dataModels.encounter = CTHEncounterData
+  foundry.documents.collections.Actors.registerSheet("cth-base", CTHEncounterSheet, {
+    types: ["encounter"],
+    makeDefault: true,
+    label: "CTHBASE.sheet.encounter",
+  })
 
   console.info("CTH Base | Fin de l'initialisation du module")
 })

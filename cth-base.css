@@ -150,6 +150,68 @@
   color: var(--co-surface);
 }
 /*
+ * BLOC RANG D'HORREUR (créatures) : rappels de difficulté VOL/rituel + bouton de test de VOL.
+ * Rendu dans le header de la fiche d'adversaire, sous l'échelle de santé. Habillage discret, aligné
+ * sur l'encre du parchemin ; le bouton reprend l'accent sombre des bandeaux de section.
+ */
+.co.actor.coc2 .cth-horror-rank {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0.35rem 0 0.15rem;
+  font-size: var(--font-size-13, 13px);
+}
+.co.actor.coc2 .cth-horror-rank .horror-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  color: var(--co-text, inherit);
+}
+.co.actor.coc2 .cth-horror-rank .horror-info i {
+  opacity: 0.75;
+  margin-right: 0.2rem;
+}
+.co.actor.coc2 .cth-horror-rank .cth-vol-button {
+  align-self: flex-start;
+  padding: 0.15rem 0.6rem;
+  border: 1px solid var(--co-sheet-accent-alt, #4a2c63);
+  border-radius: 3px;
+  background: var(--co-sheet-accent-alt, #4a2c63);
+  color: var(--co-surface, #fff);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.co.actor.coc2 .cth-horror-rank .cth-vol-button i {
+  margin-right: 0.25rem;
+}
+.co.actor.coc2 .cth-horror-rank .cth-vol-button:hover {
+  filter: brightness(1.15);
+}
+/*
+ * LAYOUT DU HEADER D'ADVERSAIRE (grille à aires nommées, cf. co2 common-header.less + coc2-base sheet.less).
+ * coc2-base ne déclare pour l'adversaire ni l'aire `secondscale` (réservée aux personnages) ni une aire pour
+ * notre bloc Rang → le ruban de conscience et le bloc `.cth-horror-rank` étaient auto-placés et recouvraient
+ * la cellule du nom (nom du Zélateur masqué par le fond du ruban). On réintègre les deux rangées pleine largeur.
+ * Rangées inutilisées (auto + vides) → hauteur nulle : la créature n'affiche que `horrorrank`, l'humain que
+ * `secondscale`. Spécificité égale à la règle coc2 → cth-base, chargé après, l'emporte.
+ */
+.co.actor.coc2.encounter .window-content .sheet-header {
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas: "img   name      traits" "img abilities abilities" "health health health" "horrorrank horrorrank horrorrank" "secondscale secondscale secondscale" "quotas quotas quotas";
+  /* Nom un peu rogné (texte au ras du bord + descendantes) : on lui rend de la marge intérieure et on
+     laisse la boîte grandir si besoin, en conservant l'ellipsis pour les noms longs. */
+}
+.co.actor.coc2.encounter .window-content .sheet-header .cth-horror-rank {
+  grid-area: horrorrank;
+  margin: 0 4px;
+}
+.co.actor.coc2.encounter .window-content .sheet-header .name {
+  height: auto;
+  min-height: 65px;
+  padding: 4px 8px;
+  line-height: 1.1;
+}
+/*
  * DÉCOR — filigrane de fond + spirales tentaculaires
  *
  * Purement décoratif : pointer-events:none, et surtout STRICTEMENT à l'intérieur de .window-content,

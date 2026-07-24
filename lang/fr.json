@@ -6,6 +6,29 @@
     "status": {
       "meurtri": "Meurtri"
     },
+    "sheet": {
+      "encounter": "Adversaire (Cthulhu)"
+    },
+    "encounter": {
+      "rank": {
+        "label": "Rang",
+        "hint": "Rang d'horreur de la créature (1 à 5), distinct de la Taille. Détermine la difficulté du test de VOL de prise de conscience et celle des rituels d'appel/protection.",
+        "none": "— Rang —"
+      },
+      "volTest": {
+        "button": "Test de VOL",
+        "difficulty": "Test de VOL difficulté",
+        "fumble": "échec critique",
+        "hint": "Provoque un test de VOL de prise de conscience chez les témoins ciblés (tokens sélectionnés).",
+        "flavor": "Prise de conscience face à {name} — Test de VOL difficulté {difficulty}",
+        "noWitness": "Ciblez au moins un témoin (token) pour provoquer le test de VOL.",
+        "noRank": "Renseignez d'abord le Rang de la créature."
+      },
+      "ritual": {
+        "difficulty": "Rituel : difficulté",
+        "hint": "Difficulté des rituels d'appel ou de protection concernant cette créature (5 × Rang)."
+      }
+    },
     "consciousnessScale": {
       "label": "Échelle de conscience",
       "short": "Conscience"
