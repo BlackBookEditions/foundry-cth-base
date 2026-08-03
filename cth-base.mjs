@@ -1,6 +1,9 @@
-import { CTH_CONFIG } from "./module/config/cth.mjs"
-import CTHEncounterData from "./module/models/encounter.mjs"
-import CTHEncounterSheet from "./module/applications/encounter-sheet.mjs"
+// Configuration
+import * as config from "./module/config/cth.mjs"
+
+// Import modules
+import * as models from "./module/models/_module.mjs"
+import * as applications from "./module/applications/_module.mjs"
 
 /**
  * Configuration publique du module. Exposée dès le chargement du script, et non dans le hook init,
@@ -13,11 +16,18 @@ import CTHEncounterSheet from "./module/applications/encounter-sheet.mjs"
  * })
  */
 CONFIG.CTHBASE = {
-  ...CTH_CONFIG,
+  ...config.CTH_CONFIG,
 }
 
 Hooks.once("init", () => {
   console.info("CTH Base | Initialisation du module...")
+
+  // Expose the module API
+  game.modules.get("cth-base").api = {
+    models,
+    applications,
+    config,
+  }
 
   // ─────────────────────────────────────────────────────────────────────────────
   // Surcharges de CONFIG.COC2BASE.
@@ -57,8 +67,8 @@ Hooks.once("init", () => {
   // Le data model est enregistré au init (et non au setup), pour être disponible avant la préparation
   // des acteurs. Ajoute le Rang d'horreur des créatures et l'Échelle de conscience des antagonistes.
   // ─────────────────────────────────────────────────────────────────────────────
-  CONFIG.Actor.dataModels.encounter = CTHEncounterData
-  foundry.documents.collections.Actors.registerSheet("cth-base", CTHEncounterSheet, {
+  CONFIG.Actor.dataModels.encounter = models.CTHEncounterData
+  foundry.documents.collections.Actors.registerSheet("cth-base", applications.CTHEncounterSheet, {
     types: ["encounter"],
     makeDefault: true,
     label: "CTHBASE.sheet.encounter",
