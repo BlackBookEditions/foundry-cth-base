@@ -18,6 +18,10 @@ Chaîne de dépendances : `co2` (système) → `coc2-base` (module) → **`cth-b
   construise directement la bonne liste.
 - Les autres surcharges de **`CONFIG.COC2BASE`** et les modèles se font dans **`init`**.
   Celles qui doivent passer après tous les `init` restent dans **`setup`**.
+- L'**Échelle de conscience** force le profil CTH : bonus de VOL pour les traumatismes et
+  malus de CHA pour l'empathie aux paliers ±1/±3/±5/±10. Le bonus est présélectionné lors
+  des tests d'horreur ; le malus d'empathie reste un choix contextuel dans la fenêtre de jet.
+  La configuration générique de COC2 est masquée dans cet univers.
 
 ## Dépendances
 
@@ -29,6 +33,7 @@ et son activation.
 ```bash
 npm install
 npm run compile   # style/cth-base.less -> cth-base.css
+npm test
 ```
 
 L'entrée JS est `cth-base.mjs` ; les sources de style sont sous `style/`, compilées vers

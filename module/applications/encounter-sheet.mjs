@@ -110,7 +110,7 @@ export default class CTHEncounterSheet extends COC2EncounterSheet {
 
     const chatFlavor = game.i18n.format("CTHBASE.encounter.volTest.flavor", { name: this.document.name, difficulty })
     for (const witness of witnesses) {
-      await witness.rollSkill("vol", { difficulty, chatFlavor })
+      await witness.rollSkill("vol", { difficulty, chatFlavor, skillContexts: ["cthTrauma"] })
     }
   }
 }

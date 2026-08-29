@@ -11,6 +11,22 @@
  */
 export const CTH_CONFIG = {}
 
+/** Profil mécanique forcé de l'Échelle de conscience. */
+export const CONSCIOUSNESS_MODIFIER_PROFILE = {
+  bonus: {
+    ability: "vol",
+    label: "CTHBASE.consciousness.modifiers.trauma",
+    contextId: "cthTrauma",
+    values: { secondState1: 1, secondState2: 3, secondState3: 5, secondState4: 10 },
+  },
+  malus: {
+    ability: "cha",
+    label: "CTHBASE.consciousness.modifiers.empathy",
+    contextId: "",
+    values: { secondState1: -1, secondState2: -3, secondState3: -5, secondState4: -10 },
+  },
+}
+
 /**
  * Rang d'horreur des créatures (Livre de l'Archiviste, tableau « Rang de la source », p. 9).
  * Le Rang (1 à 5) d'une créature ou d'une entité détermine :

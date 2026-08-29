@@ -1,3 +1,16 @@
+# 0.8.2
+- Statuts propres à Cthulhu Origines :
+  - Aveuglé : -5 en Initiative et en Défense, et -10 aux actions basées sur la vue (réduit à -5 sur un test de Perception réussi)
+  - Étourdi : -5 en Défense, aucune action possible
+  - Immobilisé : aucune action physique ni déplacement possible, toute attaque reçue est automatiquement une réussite critique
+  - Inconscient n'est plus un statut autonome : il est remplacé par Immobilisé, y compris depuis une capacité héritée de COC2
+- Ajout des effets de l'échelle de conscience :
+  - Echelon 5 (Profane) : +1 aux tests de VOL requis lors d’événements traumatisants (et -1 aux tests de CHA d'empathie)
+  - Échelon 10 (Initié) : +3 aux tests de VOL (et -3 aux tests de CHA)
+  - Échelon 15 (Éveillé) : +5 aux tests de VOL (et -5 aux tests de CHA)
+  - Échelon 20 (Illuminé) : +10 aux tests de VOL (et -10 aux tests de CHA)
+
+
 # 0.8.0
 
 ## Adversaires

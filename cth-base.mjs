@@ -68,10 +68,10 @@ Hooks.once("init", () => {
   CONFIG.COC2BASE.secondScale.forced = true
   CONFIG.COC2BASE.secondScale.label = "CTHBASE.consciousnessScale.label"
   CONFIG.COC2BASE.secondScale.labelShort = "CTHBASE.consciousnessScale.short"
+  CONFIG.COC2BASE.secondScale.modifierProfile = config.CONSCIOUSNESS_MODIFIER_PROFILE
 
   // Paliers de conscience atteints aux échelons 5/10/15/20 (seuils 25/50/75/100 %) : Profane, Initié,
-  // Éveillé, Illuminé. Affichage seul (aucun statut, aucun modificateur) : on ne renomme que le libellé
-  // et la description du niveau affiché sur la fiche.
+  // Éveillé, Illuminé. Le profil de modificateurs est fixé ci-dessus ; on adapte ici leurs libellés.
   const consciousnessStates = { secondState1: "profane", secondState2: "initie", secondState3: "eveille", secondState4: "illumine" }
   for (const [id, key] of Object.entries(consciousnessStates)) {
     CONFIG.COC2BASE.secondScale.states[id].name = `CTHBASE.consciousness.status.${key}`
@@ -109,6 +109,7 @@ Hooks.once("setup", () => {
   // le réglage est garanti enregistré par coc2-base quel que soit l'ordre de chargement.
   const setting = game.settings.settings.get("coc2-base.showSecondScale")
   if (setting) setting.config = false
+  game.settings.menus.delete("coc2-base.secondScaleConfiguration")
 })
 
 Hooks.once("ready", async () => {
