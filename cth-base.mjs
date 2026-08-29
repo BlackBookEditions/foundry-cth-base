@@ -19,6 +19,20 @@ CONFIG.CTHBASE = {
   ...config.CTH_CONFIG,
 }
 
+// Profil des états CTH. Cette configuration est posée au chargement du script : coc2-base a déjà
+// exposé CONFIG.COC2BASE grâce à la dépendance obligatoire, mais son hook init n'a pas encore
+// construit CONFIG.statusEffects. CTH peut donc modifier la composition sans recopier le catalogue.
+CONFIG.COC2BASE.removedStatusIds = [...CONFIG.COC2BASE.removedStatusIds.filter((id) => id !== "stun"), "unconscious"]
+Object.assign(CONFIG.COC2BASE.statusChanges, {
+  blind: { init: -5, def: -5 },
+  stun: { def: -5 },
+})
+Object.assign(CONFIG.COC2BASE.statusOverrides, {
+  blind: { name: "CTHBASE.status.blind", description: "CTHBASE.status.blindDescription" },
+  stun: { name: "CTHBASE.status.stun", description: "CTHBASE.status.stunDescription" },
+  immobilized: { name: "CTHBASE.status.immobilized", description: "CTHBASE.status.immobilizedDescription" },
+})
+
 Hooks.once("init", () => {
   console.info("CTH Base | Initialisation du module...")
 
@@ -28,6 +42,12 @@ Hooks.once("init", () => {
     applications,
     config,
   }
+
+  // Dans CTH, toute attaque contre une cible immobilisée est critique. Inconscient n'est pas un
+  // état autonome : toute tentative de l'appliquer passe par Immobilisé, y compris depuis une
+  // ancienne capacité COC2 ou un appel direct à toggleStatusEffect.
+  game.system.CONST.statusRules.incomingAttack.immobilized = { automaticCritical: "all" }
+  game.system.CONST.statusRules.replacements.unconscious = "immobilized"
 
   // ─────────────────────────────────────────────────────────────────────────────
   // Surcharges de CONFIG.COC2BASE.

@@ -4,7 +4,13 @@
       "title": "Cthulhu : Base"
     },
     "status": {
-      "meurtri": "Meurtri"
+      "meurtri": "Meurtri",
+      "blind": "Aveuglé",
+      "blindDescription": "-5 en Initiative et en Défense, et -10 aux actions basées sur la vue. Un test de Perception réussi réduit ce dernier malus à -5.",
+      "stun": "Étourdi",
+      "stunDescription": "-5 en Défense et aucune action possible.",
+      "immobilized": "Immobilisé",
+      "immobilizedDescription": "Aucune action physique ni aucun déplacement n'est possible. Toute attaque contre le personnage est automatiquement une réussite critique."
     },
     "sheet": {
       "encounter": "Adversaire (Cthulhu)"

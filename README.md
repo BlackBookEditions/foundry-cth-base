@@ -13,12 +13,11 @@ Chaîne de dépendances : `co2` (système) → `coc2-base` (module) → **`cth-b
 - **`CONFIG.CTHBASE`** est exposée dès le chargement du script (top-level, hors `init`),
   pour rester surchargeable par un futur module de scénario **quel que soit l'ordre de
   chargement des modules**.
-- Les surcharges de **`CONFIG.COC2BASE`** (renommage d'états de santé, seuils…) se font
-  dans le hook **`init`** : sûr quel que soit l'ordre, car `CONFIG.COC2BASE` est peuplée
-  au top-level de coc2-base, donc déjà disponible.
-- Les surcharges devant passer **après** le `init` de coc2-base (classe Actor, fiche
-  `makeDefault`, `statusEffects`…) se font dans le hook **`setup`** (garanti après tous
-  les `init`), pour ne pas dépendre de l'ordre de chargement.
+- Le profil des états CTH est injecté au **chargement du script**, après l'exposition de
+  `CONFIG.COC2BASE` par la dépendance mais avant les hooks `init`, afin que coc2-base
+  construise directement la bonne liste.
+- Les autres surcharges de **`CONFIG.COC2BASE`** et les modèles se font dans **`init`**.
+  Celles qui doivent passer après tous les `init` restent dans **`setup`**.
 
 ## Dépendances
 
