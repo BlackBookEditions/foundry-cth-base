@@ -1,0 +1,518 @@
+name: Guide du module CTH
+pages:
+  - sort: 100000
+    name: Introduction
+    type: text
+    _id: dJUM8yoGhs5xK9A9
+    system: {}
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: |-
+        <div class="journal-page-coc-base">
+          <h2>Introduction</h2>
+
+          <p class="lettrine">
+            Chroniques Oubliées Cthulhu Origines (CTH) est un module qui adapte le module <strong>Chroniques Oubliées Contemporain 2ᵉ édition (COC2)</strong> aux règles de Cthulhu
+            Origines. Il ne remplace ni COC2 ni le système : il se pose par-dessus. La chaîne complète est la suivante : le système <strong>Chroniques Oubliées 2ᵉ édition (CO2)</strong>,
+            puis le module <strong>coc2-base</strong>, puis ce module, <strong>cth-base</strong>. Les deux premiers doivent être installés et activés.
+          </p>
+
+          <p class="alinea">
+            Ce guide ne couvre donc que ce qui est <strong>spécifique à Cthulhu Origines</strong> : le vocabulaire de l'univers, l'Échelle de conscience, le Rang d'horreur des créatures,
+            les états propres à CTH et les compendiums. Pour tout le reste (échelle de santé, tranches d'âge, progression, archétypes des adversaires, Bonus Critique…), reportez-vous au
+            <strong>Guide du module COC2</strong>, fourni par coc2-base ; pour le fonctionnement générique des Actions, Effets et jets, à la documentation du système CO2.
+          </p>
+
+          <div class="encart">
+            <h3>Sommaire du guide</h3>
+            <ul>
+              <li class="sans-puce"><strong>Les Acteurs</strong> — Échelle de santé, Échelle de conscience et ses paliers, fiche Adversaire (Rang d'horreur, conscience des antagonistes).</li>
+              <li class="sans-puce"><strong>Les Objets</strong> — Compendiums CTH Témoin et CTH Archiviste, renvois aux pages des livres, automatisations fournies.</li>
+              <li class="sans-puce"><strong>Les Jets et les Messages</strong> — États propres à CTH, modificateurs de conscience dans la fenêtre de jet, test de prise de conscience.</li>
+              <li class="sans-puce"><strong>Autres fonctionnalités</strong> — Thème visuel, réglage retiré, points d'extension pour les autres modules.</li>
+            </ul>
+          </div>
+
+          <h3>Compendiums fournis</h3>
+          <p class="alinea">Le module fournit trois compendiums :</p>
+          <ul>
+            <li class="sans-puce"><strong>CTH Témoin</strong> — voies de base, capacités, armes, armures et équipement du Livre du Témoin. Accessible aux joueurs.</li>
+            <li class="sans-puce"><strong>CTH Archiviste</strong> — magie mondaine, artefacts, rituels et sortilèges du Livre de l'Archiviste. <strong>Réservé au MJ</strong> : les joueurs ne le voient pas.</li>
+            <li class="sans-puce"><strong>CTH Guide du module</strong> — ce guide.</li>
+          </ul>
+          <p class="alinea">
+            Les objets des deux premiers compendiums n'ont <strong>pas de texte descriptif</strong> : leur description indique seulement la page du livre où ils sont décrits (par exemple
+            « Livre du Témoin page 74 »). Il faut donc disposer des livres pour jouer.
+          </p>
+        </div>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    category: null
+    ownership:
+      default: -1
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '14'
+      systemId: co2
+      systemVersion: 2.3.12
+      createdTime: 1790634575528
+      modifiedTime: 1790634621944
+      lastModifiedBy: null
+      exportSource: null
+    _key: '!journal.pages!k8BCCPxwPzcx978z.dJUM8yoGhs5xK9A9'
+  - sort: 200000
+    name: Les Acteurs
+    type: text
+    _id: xPwQzUwLYw109xz4
+    system: {}
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: |-
+        <div class="journal-page-coc-base">
+          <h2>Les Acteurs</h2>
+
+          <h3>Échelle de santé</h3>
+          <p class="alinea">
+            L'échelle de santé est celle de COC2, avec ses 20 échelons et ses 4 états. Seul le vocabulaire change : l'état atteint au 20ᵉ échelon s'appelle <strong>Meurtri</strong> au lieu
+            de « Mourant », sur la fiche comme sur le statut posé sur le token. Ses effets sont inchangés.
+          </p>
+
+          <h3>Échelle de conscience</h3>
+          <p class="alinea">
+            L'Échelle de conscience mesure l'exposition du Témoin au folklore des collines. C'est la seconde échelle de COC2 (« Échelle d'évolution »), renommée et
+            <strong>toujours affichée</strong> : un ruban de 20 échelons sous l'échelle de santé, sur la fiche de personnage comme sur la mini-fiche. Un clic sur un échelon coche l'échelle
+            jusqu'à lui ; un clic sur le dernier échelon coché le décoche.
+          </p>
+          <p class="alinea">Quatre paliers donnent un état, affiché sous le ruban, et des modificateurs fixés par les règles de Cthulhu Origines :</p>
+          <table class="tableau">
+            <tbody>
+              <tr class="tableau-titre">
+                <td colspan="4">Paliers de l'Échelle de conscience</td>
+              </tr>
+              <tr class="tableau-entete">
+                <td>Échelon</td>
+                <td>État</td>
+                <td>Tests de VOL face aux traumatismes</td>
+                <td>Tests de CHA liés à l'empathie</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Profane</td>
+                <td>+1</td>
+                <td>-1</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Initié</td>
+                <td>+3</td>
+                <td>-3</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Éveillé</td>
+                <td>+5</td>
+                <td>-5</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>Illuminé</td>
+                <td>+10</td>
+                <td>-10</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="alinea">
+            Ces modificateurs ne sont jamais appliqués d'office : ils apparaissent dans la fenêtre de jet des tests de Volonté et de Charisme (voir <em>Les Jets et les Messages</em>).
+            Aucun statut n'est posé sur le token.
+          </p>
+          <div class="indications-mj">
+            Le menu « Configurer l'échelle » de COC2, qui permet de choisir librement les modificateurs de la seconde échelle, n'est pas disponible en Cthulhu Origines : le profil
+            ci-dessus est imposé par le module.
+          </div>
+
+          <h3>Fiche Adversaire</h3>
+          <p class="alinea">
+            La fiche Rencontre de COC2 est remplacée par une fiche <strong>Adversaire (Cthulhu)</strong>, sélectionnée par défaut. Elle garde le fonctionnement de COC2 (archétype pour un
+            adversaire humain, taille pour une créature) et ajoute deux notions de Cthulhu Origines.
+          </p>
+
+          <h4>Rang d'horreur des créatures</h4>
+          <p class="alinea">
+            Une créature (adversaire sans archétype) reçoit un <strong>Rang</strong> de 1 à 5, choisi dans l'en-tête de la fiche en mode Édition. Il est indépendant de la Taille : les deux
+            coexistent, comme sur les profils du bestiaire (« TAI 5 · RANG 4 »). Le sélecteur de taille est d'ailleurs préfixé « Taille … » pour les distinguer. Le Rang détermine :
+          </p>
+          <table class="tableau">
+            <tbody>
+              <tr class="tableau-titre">
+                <td colspan="4">Rang d'horreur</td>
+              </tr>
+              <tr class="tableau-entete">
+                <td>Rang</td>
+                <td>Test de VOL de prise de conscience</td>
+                <td>Échec critique</td>
+                <td>Rituels d'appel et de protection</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>difficulté 5</td>
+                <td>1</td>
+                <td>difficulté 5</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>difficulté 10</td>
+                <td>1-2</td>
+                <td>difficulté 10</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>difficulté 15</td>
+                <td>1-3</td>
+                <td>difficulté 15</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>difficulté 20</td>
+                <td>1-4</td>
+                <td>difficulté 20</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>difficulté 25</td>
+                <td>1-5</td>
+                <td>difficulté 25</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="alinea">
+            En mode Lecture, l'en-tête affiche « Rang X ». Son infobulle rappelle ces trois valeurs, et l'icône de d20 placée à côté lance le test de prise de conscience (voir <em>Les
+            Jets et les Messages</em>). Cette icône n'apparaît qu'à ceux qui peuvent modifier la fiche, c'est-à-dire en pratique au MJ.
+          </p>
+
+          <h4>Échelle de conscience des antagonistes</h4>
+          <p class="alinea">
+            Un antagoniste humain (adversaire avec archétype) porte lui aussi une Échelle de conscience, affichée sous son échelle de santé et utilisable comme celle des personnages, avec
+            les mêmes paliers et les mêmes modificateurs. Les profils du livre l'indiquent sous la forme « Échelle de conscience 5/20 (Profane) ».
+          </p>
+
+          <h4>Aides à la création</h4>
+          <p class="alinea">
+            COC2 affiche en permanence, en mode Édition, le décompte des points de caractéristiques et des capacités prévus par le profil de l'adversaire. Cthulhu Origines ne l'affiche
+            <strong>qu'en cas d'écart</strong> : total de points différent du budget, caractéristique au-delà du plafond, ou nombre de capacités différent de celui prévu. Si tout est
+            conforme, rien ne s'affiche. Comme dans COC2, un écart n'empêche jamais d'enregistrer la fiche.
+          </p>
+        </div>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    category: null
+    ownership:
+      default: -1
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '14'
+      systemId: co2
+      systemVersion: 2.3.12
+      createdTime: 1790634575528
+      modifiedTime: 1790634621944
+      lastModifiedBy: null
+      exportSource: null
+    _key: '!journal.pages!k8BCCPxwPzcx978z.xPwQzUwLYw109xz4'
+  - sort: 300000
+    name: Les Objets
+    type: text
+    _id: sKx50bOKg27q6s1Q
+    system: {}
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: |-
+        <div class="journal-page-coc-base">
+          <h2>Les Objets</h2>
+
+          <p class="alinea">
+            Les objets de Cthulhu Origines sont fournis dans deux compendiums. Aucun ne reprend le texte des livres : la description de chaque objet indique la page où il est décrit,
+            dans le <strong>Livre du Témoin</strong> ou dans le <strong>Livre de l'Archiviste</strong>. Quand un objet s'étend sur plusieurs pages, ou qu'il a une description et une ligne
+            dans un tableau, toutes les pages sont citées (par exemple « Livre du Témoin pages 100 et 102 »).
+          </p>
+
+          <h3>CTH Témoin</h3>
+          <p class="alinea">Accessible aux joueurs, ce compendium reprend le Livre du Témoin :</p>
+          <ul>
+            <li class="sans-puce"><strong>Voies</strong> — les 18 voies de base, dans l'ordre du livre.</li>
+            <li class="sans-puce"><strong>Capacités</strong> — un dossier par voie, avec ses 5 capacités (rangs 1 à 5). Chaque capacité est déjà reliée à sa voie.</li>
+            <li class="sans-puce"><strong>Armes</strong> — armes de contact, de trait, de lancer, armes à feu et explosifs.</li>
+            <li class="sans-puce"><strong>Armures</strong> — le gilet rembourré, seule protection décrite par le livre.</li>
+            <li class="sans-puce"><strong>Équipement divers</strong> — objets courants et kits complets.</li>
+          </ul>
+
+          <h3>CTH Archiviste</h3>
+          <p class="alinea">Ce compendium reprend le Livre de l'Archiviste. Il est <strong>réservé au MJ</strong> : les joueurs ne le voient pas dans l'onglet Compendiums.</p>
+          <ul>
+            <li class="sans-puce"><strong>Voies de la magie mondaine</strong> et <strong>Magie mondaine</strong> — les 14 voies et leurs capacités, un dossier par voie.</li>
+            <li class="sans-puce"><strong>Artefacts</strong> — les 10 artefacts du folklore des collines, sous forme d'équipement.</li>
+            <li class="sans-puce"><strong>Rituels</strong> — un dossier par rituel (appel, ouverture de portail, protection), avec un objet par rang, de 1 à 5.</li>
+            <li class="sans-puce"><strong>Sortilèges</strong> — un dossier par rang, de 1 à 5.</li>
+          </ul>
+          <p class="alinea">
+            Un rituel s'apprend pour un rang donné : c'est pourquoi chaque rang est un objet distinct (« Rituel d'appel (rang 3) »). Rituels et sortilèges sont des capacités hors voie,
+            avec leur rang et le type d'action limitée ; les sortilèges sont en plus marqués comme sorts.
+          </p>
+          <div class="indications-mj">
+            Pour donner un sortilège, un rituel ou un artefact à un joueur, glissez-le depuis le compendium sur sa fiche : l'objet est copié sur le personnage, sans que le joueur ait accès
+            au reste du compendium.
+          </div>
+
+          <h3>Ce qui est automatisé</h3>
+          <ul>
+            <li class="sans-puce">
+              <strong>Capacités des voies de base</strong> — seuls les bonus nets sont encodés : hausses de caractéristique sans choix, bonus d'attaque, de dommages, d'Initiative et de
+              critique, et bonus aux tests de caractéristique. Ces derniers sont proposés à cocher dans la fenêtre de jet, car ils ne valent que dans certaines circonstances. Les bonus
+              de palier de l'Échelle de conscience, les dés bonus et les substitutions de caractéristique restent à gérer à la main.
+            </li>
+            <li class="sans-puce">
+              <strong>Armes</strong> — attaque au contact (ATC) ou à distance (ATD), dommages, portée et nombre de munitions. Le fusil de précision ajoute la PER à l'attaque et aux
+              dommages ; le grand maillet impose -4 en Initiative quand il est équipé.
+            </li>
+            <li class="sans-puce"><strong>Gilet rembourré</strong> — RD 3 quand il est équipé.</li>
+            <li class="sans-puce"><strong>Pierre de vision</strong> — +3 aux tests de PER quand elle est équipée, proposé à cocher dans la fenêtre de jet.</li>
+          </ul>
+
+          <h3>Ce qui ne l'est pas</h3>
+          <ul>
+            <li class="sans-puce">Le bonus critique et la cadence de tir des armes n'ont pas d'équivalent dans le système : reportez-vous au livre.</li>
+            <li class="sans-puce">Les explosifs n'ont pas d'attaque, faute de caractéristiques chiffrées dans le livre.</li>
+            <li class="sans-puce">
+              Le système n'accepte que des prix entiers : les prix inférieurs au dollar ou avec des cents sont arrondis au dollar supérieur. Les objets sans prix dans le livre sont à 0 $.
+            </li>
+            <li class="sans-puce">Vêtements, bijoux, services et véhicules ne sont pas repris.</li>
+            <li class="sans-puce">Artefacts, rituels et sortilèges n'ont pas d'effet automatique, en dehors de la Pierre de vision.</li>
+          </ul>
+        </div>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    category: null
+    ownership:
+      default: -1
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '14'
+      systemId: co2
+      systemVersion: 2.3.12
+      createdTime: 1790634575528
+      modifiedTime: 1790634621944
+      lastModifiedBy: null
+      exportSource: null
+    _key: '!journal.pages!k8BCCPxwPzcx978z.sKx50bOKg27q6s1Q'
+  - sort: 400000
+    name: Les Jets et les Messages
+    type: text
+    _id: uDmnz5sdiuFhz5Ut
+    system: {}
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: |-
+        <div class="journal-page-coc-base">
+          <h2>Les Jets et les Messages</h2>
+
+          <h3>États préjudiciables propres à Cthulhu Origines</h3>
+          <p class="alinea">
+            Trois états sont redéfinis selon les règles de Cthulhu Origines. Ils se posent sur le token comme les autres statuts. Une partie de leurs effets est appliquée
+            automatiquement, le reste est à gérer à la table.
+          </p>
+          <table class="tableau">
+            <tbody>
+              <tr class="tableau-titre">
+                <td colspan="3">États de Cthulhu Origines</td>
+              </tr>
+              <tr class="tableau-entete">
+                <td>État</td>
+                <td>Appliqué automatiquement</td>
+                <td>Proposé ou à gérer à la table</td>
+              </tr>
+              <tr>
+                <td>Aveuglé</td>
+                <td>-5 en Initiative et en Défense.</td>
+                <td>
+                  -10 aux actions basées sur la vue, proposé à cocher dans la fenêtre de jet. La réduction à -5 après un test de Perception réussi reste à appliquer à la main.
+                </td>
+              </tr>
+              <tr>
+                <td>Étourdi</td>
+                <td>-5 en Défense.</td>
+                <td>Aucune action possible.</td>
+              </tr>
+              <tr>
+                <td>Immobilisé</td>
+                <td>-5 en Défense et déplacement nul (effets de COC2), et toute attaque contre le personnage est automatiquement une réussite critique.</td>
+                <td>Aucune action physique possible.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="alinea">
+            L'état <strong>Inconscient</strong> n'existe pas en Cthulhu Origines : il est remplacé par Immobilisé. Toute capacité ou tout effet hérité de COC2 qui poserait Inconscient
+            pose donc Immobilisé à la place.
+          </p>
+
+          <h3>L'Échelle de conscience dans la fenêtre de jet</h3>
+          <p class="alinea">
+            Dès qu'un personnage ou un antagoniste humain a atteint un palier de l'Échelle de conscience, ses tests de caractéristique proposent une ligne supplémentaire dans la fenêtre
+            de jet :
+          </p>
+          <ul>
+            <li class="sans-puce">
+              <strong>Test de VOL</strong> — le bonus du palier (+1, +3, +5 ou +10), libellé « Événements traumatisants ». Il n'est coché d'avance que pour un test de prise de
+              conscience lancé depuis une fiche Adversaire ; pour tout autre test de VOL, cochez-le si le test porte bien sur un événement traumatisant.
+            </li>
+            <li class="sans-puce">
+              <strong>Test de CHA</strong> — le malus du palier (-1, -3, -5 ou -10), libellé « Empathie ». Il n'est jamais coché d'avance : c'est au joueur ou au MJ de juger si l'action
+              relève de l'empathie.
+            </li>
+          </ul>
+          <div class="exemple">
+            Un Témoin Initié (10 échelons cochés) tente de réconforter un témoin choqué : la fenêtre de son test de Charisme propose une case « Empathie -3 », que le MJ fait cocher. S'il
+            marchande avec un antiquaire, la case reste décochée.
+          </div>
+
+          <h3>Test de prise de conscience</h3>
+          <p class="alinea">
+            Face à une créature du folklore, les Témoins font un test de VOL dont la difficulté dépend du Rang de la créature (voir <em>Les Acteurs</em>). Pour le lancer :
+          </p>
+          <ul>
+            <li class="sans-puce"><strong>1.</strong> Ciblez les tokens des Témoins concernés.</li>
+            <li class="sans-puce"><strong>2.</strong> Ouvrez la fiche de la créature en mode Lecture et cliquez sur l'icône de d20 à côté de « Rang X ».</li>
+          </ul>
+          <p class="alinea">
+            Chaque Témoin ciblé fait alors un test de VOL à la bonne difficulté, avec le bonus de son palier de conscience déjà coché. Le message de chat rappelle le nom de la créature
+            et la difficulté. Sans Rang renseigné ou sans cible, un avertissement s'affiche et aucun test n'est lancé.
+          </p>
+        </div>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    category: null
+    ownership:
+      default: -1
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '14'
+      systemId: co2
+      systemVersion: 2.3.12
+      createdTime: 1790634575528
+      modifiedTime: 1790634621944
+      lastModifiedBy: null
+      exportSource: null
+    _key: '!journal.pages!k8BCCPxwPzcx978z.uDmnz5sdiuFhz5Ut'
+  - sort: 500000
+    name: Autres fonctionnalités
+    type: text
+    _id: eRGefwUr8xqT3HlJ
+    system: {}
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: |-
+        <div class="journal-page-coc-base">
+          <h2>Autres fonctionnalités</h2>
+
+          <h3>Thème visuel</h3>
+          <p class="alinea">
+            Les fiches de personnage, d'adversaire et d'objet reçoivent un habillage propre à l'univers : fond de parchemin, bandeaux noir d'encre, titres en police de grimoire et nom du
+            personnage en écriture manuscrite, spirales décoratives en filigrane. Seul l'habillage change : la disposition des fiches reste celle de COC2.
+          </p>
+          <ul>
+            <li class="sans-puce">
+              <strong>Échelles</strong> — les échelons sont des hexagones ; les jalons 5, 10, 15 et 20 sont entourés d'un tourbillon. L'échelle de Santé est rouge sang, l'Échelle de
+              conscience violette, et ses échelons cochés passent eux aussi en rouge sang.
+            </li>
+            <li class="sans-puce">
+              <strong>Thème clair ou sombre</strong> — le rendu suit le thème choisi dans les réglages de Foundry. En thème clair, l'en-tête de la fiche est sur parchemin et le fond
+              tire vers le gris ; en thème sombre, l'en-tête est un bloc noir.
+            </li>
+            <li class="sans-puce"><strong>Messages de chat</strong> — les cartes restent lisibles en thème sombre.</li>
+          </ul>
+
+          <h3>Réglage retiré</h3>
+          <p class="alinea">
+            Le réglage de monde de COC2 « Afficher la seconde échelle » n'apparaît plus, pas plus que le menu « Configurer l'échelle » : l'Échelle de conscience est toujours affichée
+            et son profil de modificateurs est fixé par les règles (voir <em>Les Acteurs</em>).
+          </p>
+
+          <div class="indications-mj">
+            <strong>Pour les créateurs de modules et de scénarios.</strong> Le module expose sa configuration dans <code>CONFIG.CTHBASE</code>, disponible dès le chargement des
+            scripts : un module de scénario peut la modifier depuis son propre hook <code>init</code>, quel que soit l'ordre de chargement. Les modèles, fiches et fonctions de
+            configuration sont accessibles par <code>game.modules.get("cth-base").api</code> (<code>models</code>, <code>applications</code>, <code>config</code>), sur le modèle de
+            <code>game.system.api</code>.
+          </div>
+        </div>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    category: null
+    ownership:
+      default: -1
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '14'
+      systemId: co2
+      systemVersion: 2.3.12
+      createdTime: 1790634575528
+      modifiedTime: 1790634621944
+      lastModifiedBy: null
+      exportSource: null
+    _key: '!journal.pages!k8BCCPxwPzcx978z.eRGefwUr8xqT3HlJ'
+folder: null
+categories: []
+ownership:
+  default: 0
+flags:
+  coc2-base:
+    isJournalCOC: true
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790634575528
+  modifiedTime: 1790634621944
+  lastModifiedBy: null
+  exportSource: null
+_id: k8BCCPxwPzcx978z
+sort: 0
+_key: '!journal!k8BCCPxwPzcx978z'

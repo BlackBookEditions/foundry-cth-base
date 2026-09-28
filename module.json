@@ -30,6 +30,14 @@
       "path": "packs/cth-archiviste",
       "system": "co2",
       "ownership": { "PLAYER": "NONE", "ASSISTANT": "OWNER" }
+    },
+    {
+      "label": "CTH Guide du module",
+      "type": "JournalEntry",
+      "name": "cth-guide-du-module",
+      "path": "packs/cth-guide-du-module",
+      "system": "co2",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" }
     }
   ],
   "authors": [ { "name": "kristov" } ],

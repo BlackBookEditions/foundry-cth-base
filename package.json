@@ -10,7 +10,8 @@
     "test": "node --test test/*.test.mjs",
     "generateObjets": "node ./tools/generate-objets-pack.mjs",
     "LDBtoYML": "node ./tools/LDBtoYML.mjs",
-    "YMLtoLDB": "node ./tools/YMLtoLDB.mjs"
+    "YMLtoLDB": "node ./tools/YMLtoLDB.mjs",
+    "buildGuide": "node ./tools/build-guide.mjs"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4",

@@ -1,0 +1,33 @@
+<div class="journal-page-coc-base">
+  <h2>Autres fonctionnalités</h2>
+
+  <h3>Thème visuel</h3>
+  <p class="alinea">
+    Les fiches de personnage, d'adversaire et d'objet reçoivent un habillage propre à l'univers : fond de parchemin, bandeaux noir d'encre, titres en police de grimoire et nom du
+    personnage en écriture manuscrite, spirales décoratives en filigrane. Seul l'habillage change : la disposition des fiches reste celle de COC2.
+  </p>
+  <ul>
+    <li class="sans-puce">
+      <strong>Échelles</strong> — les échelons sont des hexagones ; les jalons 5, 10, 15 et 20 sont entourés d'un tourbillon. L'échelle de Santé est rouge sang, l'Échelle de
+      conscience violette, et ses échelons cochés passent eux aussi en rouge sang.
+    </li>
+    <li class="sans-puce">
+      <strong>Thème clair ou sombre</strong> — le rendu suit le thème choisi dans les réglages de Foundry. En thème clair, l'en-tête de la fiche est sur parchemin et le fond
+      tire vers le gris ; en thème sombre, l'en-tête est un bloc noir.
+    </li>
+    <li class="sans-puce"><strong>Messages de chat</strong> — les cartes restent lisibles en thème sombre.</li>
+  </ul>
+
+  <h3>Réglage retiré</h3>
+  <p class="alinea">
+    Le réglage de monde de COC2 « Afficher la seconde échelle » n'apparaît plus, pas plus que le menu « Configurer l'échelle » : l'Échelle de conscience est toujours affichée
+    et son profil de modificateurs est fixé par les règles (voir <em>Les Acteurs</em>).
+  </p>
+
+  <div class="indications-mj">
+    <strong>Pour les créateurs de modules et de scénarios.</strong> Le module expose sa configuration dans <code>CONFIG.CTHBASE</code>, disponible dès le chargement des
+    scripts : un module de scénario peut la modifier depuis son propre hook <code>init</code>, quel que soit l'ordre de chargement. Les modèles, fiches et fonctions de
+    configuration sont accessibles par <code>game.modules.get("cth-base").api</code> (<code>models</code>, <code>applications</code>, <code>config</code>), sur le modèle de
+    <code>game.system.api</code>.
+  </div>
+</div>
