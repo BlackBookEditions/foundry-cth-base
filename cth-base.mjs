@@ -49,6 +49,15 @@ Hooks.once("init", () => {
   game.system.CONST.statusRules.incomingAttack.immobilized = { automaticCritical: "all" }
   game.system.CONST.statusRules.replacements.unconscious = "immobilized"
 
+  // Dernière version des notes affichée (voir applications.CTHReleaseNotes) : scope "user" pour que
+  // chaque MJ ait son propre suivi de lecture, config: false car piloté par la case à cocher de la fenêtre.
+  game.settings.register("cth-base", "lastReleaseNotesSeen", {
+    scope: "user",
+    config: false,
+    type: String,
+    default: "",
+  })
+
   // ─────────────────────────────────────────────────────────────────────────────
   // Surcharges de CONFIG.COC2BASE.
   //
@@ -114,4 +123,30 @@ Hooks.once("setup", () => {
 
 Hooks.once("ready", async () => {
   console.info("CTH Base | Module prêt")
+
+  // Notes de version du module (garde MJ interne à displayIfNeeded)
+  applications.CTHReleaseNotes.displayIfNeeded()
+})
+
+/*
+ * Hook renderCOSidebarMenu : section Cthulhu Origines, avec le bouton des notes de version.
+ * Ajoutée en fin de menu et non après la section support comme le fait coc2-base : les deux hooks
+ * attendent un rendu de template, l'ordre de leurs insertions n'est donc pas garanti. En fin de menu,
+ * la section cth reste sous celle de coc2-base quel que soit celui qui termine le premier.
+ */
+Hooks.on("renderCOSidebarMenu", async (application, html, context, options) => {
+  const container = html.querySelector(".co.support")?.parentElement
+  if (!container) return
+
+  const renderedHtml = await foundry.applications.handlebars.renderTemplate("modules/cth-base/templates/sidebar-menu.hbs", {
+    user: game.user,
+  })
+  if (renderedHtml === "") return
+
+  container.insertAdjacentHTML("beforeend", renderedHtml)
+  // Pas d'ApplicationV2 ici (template injecté en HTML brut) : câblage manuel, garde anti-double-ouverture
+  // sur le même principe que coc2-base
+  container.querySelector(".cth-base-release-notes")?.addEventListener("click", () => {
+    if (!foundry.applications.instances.has("cth-base-release-notes")) applications.CTHReleaseNotes.displayAll()
+  })
 })

@@ -130,6 +130,7 @@ jobs:
             cth-base.css                         \
             README.md                            \
             CHANGELOG.md                         \
+            release-notes.md                     \
             module/                              \
             assets/                              \
             lang/                                \

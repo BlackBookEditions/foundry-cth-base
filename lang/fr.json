@@ -57,6 +57,19 @@
         "trauma": "Événements traumatisants",
         "empathy": "Empathie"
       }
+    },
+    "Sidebar": {
+      "title": "Cthulhu Origines",
+      "releaseNotes": "Notes de version",
+      "releaseNotesTooltip": "Consultez les nouveautés des versions du module Cthulhu Origines"
+    },
+    "releaseNotes": {
+      "title": "Notes de version — Cthulhu Origines",
+      "heading": "Quoi de neuf ?",
+      "subtitle": "Chroniques Oubliées Cthulhu Origines — version {version}",
+      "empty": "Aucune note de version disponible.",
+      "dontShowAgain": "Ne plus afficher les notes de ces versions",
+      "dontShowAgainHint": "Cette fenêtre ne s'ouvrira plus pour les versions affichées ici. Elle réapparaîtra à la prochaine mise à jour du module, avec les seules nouveautés de celle-ci."
     }
   }
 }

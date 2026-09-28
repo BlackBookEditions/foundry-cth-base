@@ -33,7 +33,7 @@ pages:
               <li class="sans-puce"><strong>Les Acteurs</strong> — Échelle de santé, Échelle de conscience et ses paliers, fiche Adversaire (Rang d'horreur, conscience des antagonistes).</li>
               <li class="sans-puce"><strong>Les Objets</strong> — Compendiums CTH Témoin et CTH Archiviste, renvois aux pages des livres, automatisations fournies.</li>
               <li class="sans-puce"><strong>Les Jets et les Messages</strong> — États propres à CTH, modificateurs de conscience dans la fenêtre de jet, test de prise de conscience.</li>
-              <li class="sans-puce"><strong>Autres fonctionnalités</strong> — Thème visuel, réglage retiré, points d'extension pour les autres modules.</li>
+              <li class="sans-puce"><strong>Autres fonctionnalités</strong> — Notes de version, thème visuel, réglage retiré, points d'extension pour les autres modules.</li>
             </ul>
           </div>
 
@@ -64,7 +64,7 @@ pages:
       systemId: co2
       systemVersion: 2.3.12
       createdTime: 1790634575528
-      modifiedTime: 1790634621944
+      modifiedTime: 1790635063133
       lastModifiedBy: null
       exportSource: null
     _key: '!journal.pages!k8BCCPxwPzcx978z.dJUM8yoGhs5xK9A9'
@@ -229,7 +229,7 @@ pages:
       systemId: co2
       systemVersion: 2.3.12
       createdTime: 1790634575528
-      modifiedTime: 1790634621944
+      modifiedTime: 1790635063133
       lastModifiedBy: null
       exportSource: null
     _key: '!journal.pages!k8BCCPxwPzcx978z.xPwQzUwLYw109xz4'
@@ -322,7 +322,7 @@ pages:
       systemId: co2
       systemVersion: 2.3.12
       createdTime: 1790634575528
-      modifiedTime: 1790634621944
+      modifiedTime: 1790635063133
       lastModifiedBy: null
       exportSource: null
     _key: '!journal.pages!k8BCCPxwPzcx978z.sKx50bOKg27q6s1Q'
@@ -428,7 +428,7 @@ pages:
       systemId: co2
       systemVersion: 2.3.12
       createdTime: 1790634575528
-      modifiedTime: 1790634621944
+      modifiedTime: 1790635063133
       lastModifiedBy: null
       exportSource: null
     _key: '!journal.pages!k8BCCPxwPzcx978z.uDmnz5sdiuFhz5Ut'
@@ -446,6 +446,13 @@ pages:
       content: |-
         <div class="journal-page-coc-base">
           <h2>Autres fonctionnalités</h2>
+
+          <h3>Notes de version intégrées</h3>
+          <p class="alinea">
+            Une fenêtre dédiée affiche les nouveautés du module. Elle s'ouvre automatiquement au MJ après une mise à jour, tant que les nouvelles entrées n'ont pas été marquées comme
+            lues avec la case « Ne plus afficher les notes de ces versions ». Elle reste consultable à tout moment avec le bouton « Notes de version » de la section
+            <strong>Cthulhu Origines</strong>, dans le menu latéral Chroniques Oubliées. Elle est distincte de celle de COC2 : les deux peuvent s'ouvrir après une mise à jour.
+          </p>
 
           <h3>Thème visuel</h3>
           <p class="alinea">
@@ -492,7 +499,7 @@ pages:
       systemId: co2
       systemVersion: 2.3.12
       createdTime: 1790634575528
-      modifiedTime: 1790634621944
+      modifiedTime: 1790635063133
       lastModifiedBy: null
       exportSource: null
     _key: '!journal.pages!k8BCCPxwPzcx978z.eRGefwUr8xqT3HlJ'
@@ -510,7 +517,7 @@ _stats:
   systemId: co2
   systemVersion: 2.3.12
   createdTime: 1790634575528
-  modifiedTime: 1790634621944
+  modifiedTime: 1790635063133
   lastModifiedBy: null
   exportSource: null
 _id: k8BCCPxwPzcx978z
