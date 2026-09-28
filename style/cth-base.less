@@ -1,7 +1,15 @@
 // Point d'entrée LESS de cth-base.
 // Thème visuel « Parchemin fidèle » de la fiche Cthulhu Origines : surcouche de couleurs, fond,
-// polices et décor par-dessus le thème monochrome de coc2-base. Chargée après coc2-base, donc
-// gagnante à spécificité égale — aucun changement de position, purement habillage.
+// polices et décor par-dessus le thème monochrome de coc2-base — aucun changement de position, purement habillage.
+//
+// ORDRE GARANTI PAR UNE COUCHE CSS, pas par l'ordre de chargement. module.json déclare
+// `"layer": "cth-base"` : Foundry importe la feuille en `@import … layer(cth-base)`. Cette couche n'existe
+// pas dans la déclaration du cœur (reset … system, modules, exceptions), elle est donc ajoutée APRÈS
+// toutes les autres et l'emporte sur coc2-base (couche `modules`) quelle que soit la spécificité.
+// Sans elle, l'ordre entre modules est celui de fs.readdirSync sur Data/modules (non trié, dépend du
+// système de fichiers) : `relationships.requires` ne l'influence pas.
+// Ne pas utiliser `modules.cth-base` : les règles posées directement dans `modules` battent ses sous-couches.
+// Attention aux !important : entre couches, leur priorité s'inverse (celui de coc2-base gagnerait).
 
 @import "./theme/palette.less"; // variables --co-* (parchemin, bandeaux noir encre…)
 @import "./theme/typography.less"; // nom manuscrit + en-têtes serif de grimoire

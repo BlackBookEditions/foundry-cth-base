@@ -16,7 +16,7 @@
   },
   "authors": [ { "name": "kristov" } ],
   "esmodules": ["cth-base.mjs"],
-  "styles": ["cth-base.css"],
+  "styles": [{ "src": "cth-base.css", "layer": "cth-base" }],
   "languages": [ { "lang": "fr", "name": "French", "path": "lang/fr.json" } ],
   "socket": false,
   "manifest": "#{MANIFEST}#",

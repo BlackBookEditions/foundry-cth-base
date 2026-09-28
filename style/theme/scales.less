@@ -1,10 +1,14 @@
 /*
  * FORME + COULEURS DES ÉCHELLES — hexagones réguliers bordés de noir, jalons cerclés d'un tourbillon
  *
- * IMPORTANT — spécificité : coc2-base/style/sheet.less qualifie ses échelons
- * `.co.actor.coc2 .health-bar .health-step` / `.second-scale-bar .scale-step` (il inclut la barre).
- * On reprend la MÊME chaîne, sinon nos règles ont une spécificité plus faible et coc2 l'emporte. À
- * spécificité égale, cth étant chargé en dernier, on gagne.
+ * PRIORITÉ SUR coc2-base : assurée par la couche CSS `cth-base` (cf. module.json + style/cth-base.less),
+ * postérieure à la couche `modules` — spécificité et ordre de chargement n'entrent plus en jeu. On garde
+ * néanmoins la chaîne `.co.actor.coc2 .health-bar .health-step` de coc2-base, par lisibilité du parallèle.
+ *
+ * RUBAN SANTÉ ≠ RUBAN CONSCIENCE dans coc2-base : son commit 4d3dfd5 n'a touché QUE le ruban Santé
+ * (min-width des cases, overflow-x et height du conteneur). Ces déclarations cassent nos hexagones, qui
+ * se dimensionnent par la HAUTEUR + aspect-ratio. On les neutralise ci-dessous sur les deux rubans, pour
+ * qu'ils restent rigoureusement identiques quoi que fasse la base.
  *
  * BORDURE NOIRE — un `border` ne suit pas le clip-path, et un `drop-shadow` sur le même élément est
  * ROGNÉ par le clip-path (donc invisible). On emploie la technique « deux couches » de coc2 : l'élément
@@ -28,6 +32,46 @@
   .second-scale-bar .scale-steps {
     justify-content: space-between;
     gap: 3px;
+    // Annule l'`overflow-x: auto` et le `height: stretch` que coc2-base pose sur le seul .health-scale.
+    // `visible` est OBLIGATOIRE : un conteneur de défilement rognerait les tourbillons des jalons, dont
+    // le ::before déborde volontairement de la case (inset: -50%).
+    overflow-x: visible;
+    height: auto;
+  }
+
+  // Bandeau du libellé : coc2-base a retiré le fond de .health-label (mais l'a gardé sur .scale-label),
+  // ce qui laissait le texte crème (imposé par theme/header-light.less) illisible sur le parchemin clair.
+  .health-bar .health-label {
+    background-color: var(--co-sheet-accent);
+  }
+
+  // Bloc X/Y : centré verticalement sur le ruban PAR DÉFAUT. coc2-base le colle en haut
+  // (`align-self: flex-start`) pour dégager la place du nom d'état — mais il le fait en permanence, y
+  // compris quand aucun état n'est atteint, où le X/Y se retrouve 3px trop haut face aux hexagones.
+  .health-bar .health-summary,
+  .second-scale-bar .scale-summary {
+    align-self: center;
+  }
+
+  // Un état est affiché (.health-state / .scale-state, rendus seulement si l'état existe) : le X/Y
+  // remonte pour dégager la place du nom d'état, posé juste dessous.
+  .health-bar:has(.health-state) .health-summary,
+  .second-scale-bar:has(.scale-state) .scale-summary {
+    align-self: flex-start;
+  }
+
+  // Place du nom d'état réservée EN PERMANENCE, état atteint ou non : il est en position absolue
+  // (top: 100%) donc hors flux, et rien ne le contient. Réserver conditionnellement ferait grandir le
+  // ruban à l'apparition de l'état et pousserait toute la suite de l'en-tête vers le bas — la ligne
+  // sauterait au premier point de dégât. Hauteur de l'en-tête donc constante ; seul le X/Y bouge.
+  //
+  // MARGIN et non padding : en mini-fiche coc2-base impose aux rubans une hauteur fixe (2rem) et le
+  // reset de Foundry met tout en `border-box` — un padding y serait pris SUR la hauteur, écrasant la
+  // rangée d'hexagones (centre mesuré à 7,2px au lieu de 16). La marge, elle, s'ajoute à l'extérieur :
+  // hauteur et hexagones intacts sur les deux fiches.
+  .health-bar,
+  .second-scale-bar {
+    margin-bottom: 1.1em;
   }
 
   // Taille commune à toutes les cases : hexagone régulier via aspect-ratio √3/2 ≈ 0.8660254.
@@ -38,6 +82,10 @@
     width: auto;
     height: 1.9em;
     aspect-ratio: 0.8660254;
+    // Annule le `min-width: calc(94% / 20)` que coc2-base pose sur les seules .health-step : 4,7 % de la
+    // largeur du ruban l'emporteraient sur la largeur déduite de l'aspect-ratio (hexagone aplati), et
+    // 20 cases + gaps déborderaient du conteneur.
+    min-width: 0;
     display: flex;
     align-items: center;
     justify-content: center;

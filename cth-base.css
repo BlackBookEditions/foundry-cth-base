@@ -3,7 +3,11 @@
  *
  * Surcharge de la palette monochrome de coc2-base (modules/coc2-base/style/palette.less), qui elle-même
  * surcharge celle du système (systems/co2/styles/palette.less). On redéclare les mêmes sélecteurs de
- * thème ; la feuille de cth-base étant chargée en dernier, ces valeurs l'emportent.
+ * thème ; la feuille de cth-base étant dans la couche CSS `cth-base` (cf. module.json et cth-base.less),
+ * postérieure à la couche `modules` de coc2-base, ces valeurs l'emportent quel que soit l'ordre de chargement.
+ *
+ * Ce sont les valeurs historiques de coc2-base (avant son commit 4d3dfd5, qui est passé au violet/gris/
+ * bleu/vert/rouge) : cth-base conserve volontairement l'encre chaude.
  *
  * UN SEUL JEU DE VALEURS pour les deux modes (comme coc2-base) : l'habillage parchemin est identique en
  * thème Foundry clair et sombre. Le texte du contenu (posé sur parchemin clair) est forcé sombre dans les
@@ -291,10 +295,14 @@
 /*
  * FORME + COULEURS DES ÉCHELLES — hexagones réguliers bordés de noir, jalons cerclés d'un tourbillon
  *
- * IMPORTANT — spécificité : coc2-base/style/sheet.less qualifie ses échelons
- * `.co.actor.coc2 .health-bar .health-step` / `.second-scale-bar .scale-step` (il inclut la barre).
- * On reprend la MÊME chaîne, sinon nos règles ont une spécificité plus faible et coc2 l'emporte. À
- * spécificité égale, cth étant chargé en dernier, on gagne.
+ * PRIORITÉ SUR coc2-base : assurée par la couche CSS `cth-base` (cf. module.json + style/cth-base.less),
+ * postérieure à la couche `modules` — spécificité et ordre de chargement n'entrent plus en jeu. On garde
+ * néanmoins la chaîne `.co.actor.coc2 .health-bar .health-step` de coc2-base, par lisibilité du parallèle.
+ *
+ * RUBAN SANTÉ ≠ RUBAN CONSCIENCE dans coc2-base : son commit 4d3dfd5 n'a touché QUE le ruban Santé
+ * (min-width des cases, overflow-x et height du conteneur). Ces déclarations cassent nos hexagones, qui
+ * se dimensionnent par la HAUTEUR + aspect-ratio. On les neutralise ci-dessous sur les deux rubans, pour
+ * qu'ils restent rigoureusement identiques quoi que fasse la base.
  *
  * BORDURE NOIRE — un `border` ne suit pas le clip-path, et un `drop-shadow` sur le même élément est
  * ROGNÉ par le clip-path (donc invisible). On emploie la technique « deux couches » de coc2 : l'élément
@@ -307,6 +315,23 @@
 .co.actor.coc2 .second-scale-bar .scale-steps {
   justify-content: space-between;
   gap: 3px;
+  overflow-x: visible;
+  height: auto;
+}
+.co.actor.coc2 .health-bar .health-label {
+  background-color: var(--co-sheet-accent);
+}
+.co.actor.coc2 .health-bar .health-summary,
+.co.actor.coc2 .second-scale-bar .scale-summary {
+  align-self: center;
+}
+.co.actor.coc2 .health-bar:has(.health-state) .health-summary,
+.co.actor.coc2 .second-scale-bar:has(.scale-state) .scale-summary {
+  align-self: flex-start;
+}
+.co.actor.coc2 .health-bar,
+.co.actor.coc2 .second-scale-bar {
+  margin-bottom: 1.1em;
 }
 .co.actor.coc2 .health-bar .health-step,
 .co.actor.coc2 .second-scale-bar .scale-step {
@@ -314,6 +339,7 @@
   width: auto;
   height: 1.9em;
   aspect-ratio: 0.8660254;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
