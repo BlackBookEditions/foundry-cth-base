@@ -1,0 +1,39 @@
+folder: RKLhY7qYIjGTcrqH
+name: Machine à écrire
+type: equipment
+img: icons/sundries/documents/document-letter-tan.webp
+_id: 9829K3u4ItlNb9ie
+system:
+  description: <p>Livre du Témoin pages 95-96</p>
+  subtype: misc
+  martialCategory: divers
+  damagetype: ''
+  price:
+    value: 60
+    unit: usd
+  equipped: false
+  properties:
+    equipable: false
+    reloadable: false
+    stackable: false
+  usage:
+    oneHand: false
+    twoHand: false
+  actions: []
+  tags: []
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!9829K3u4ItlNb9ie'

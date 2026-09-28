@@ -1,0 +1,50 @@
+folder: RDgChSk9nSRDIByv
+name: Grenade à fragmentation
+type: equipment
+img: icons/weapons/thrown/grenade-round.webp
+_id: gfswxTCXexw5o9E5
+system:
+  description: <p>Livre du Témoin page 109</p>
+  subtype: weapon
+  martialCategory: explosif
+  damagetype: ''
+  price:
+    value: 0
+    unit: usd
+  equipped: false
+  properties:
+    equipable: true
+    reloadable: false
+    stackable: false
+  usage:
+    oneHand: false
+    twoHand: false
+  actions: []
+  tags: []
+  range:
+    base: 0
+    ability: null
+    details: null
+    unit: m
+    min: null
+    max: null
+    bonuses:
+      sheet: 0
+      effects: 0
+    value: 40
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!gfswxTCXexw5o9E5'

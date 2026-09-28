@@ -1,0 +1,30 @@
+folder: urxm71OnHjURIixD
+name: Voie de la mécanique
+type: path
+img: icons/svg/aura.svg
+_id: uUQ7q2UjUKTZrNC5
+system:
+  subtype: profile
+  description: <p>Livre du Témoin page 84</p>
+  capacities:
+    - Compendium.cth-base.cth-temoin.Item.9iNi8YqZFsYz2BEB
+    - Compendium.cth-base.cth-temoin.Item.7uhiKYsBMC8pH1fr
+    - Compendium.cth-base.cth-temoin.Item.G8yWhS12O2C9vjSf
+    - Compendium.cth-base.cth-temoin.Item.bh5jUo6UzHgOgfel
+    - Compendium.cth-base.cth-temoin.Item.bHoZZzBtshLbi2QX
+effects: []
+sort: 1300000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!uUQ7q2UjUKTZrNC5'

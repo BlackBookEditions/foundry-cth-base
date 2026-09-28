@@ -1,0 +1,54 @@
+folder: 5xhpLq7cn7RDX7lY
+name: Secouriste
+type: capacity
+img: icons/svg/upgrade.svg
+_id: oCrMhGMqUTAbn2U0
+system:
+  description: <p>Livre du Témoin page 85</p>
+  rank: 1
+  learned: false
+  path: Compendium.cth-base.cth-temoin.Item.RYiI7A7bHazy9piI
+  actions:
+    - source: Compendium.cth-base.cth-temoin.Item.oCrMhGMqUTAbn2U0
+      indice: 0
+      type: buff
+      img: icons/svg/upgrade.svg
+      label: Secouriste
+      chatFlavor: ''
+      actionType: none
+      properties:
+        visible: false
+        activable: false
+        enabled: false
+        temporary: false
+        noManaCost: false
+        noChargesUsed: false
+      conditions:
+        - predicate: isLearned
+          object: ''
+      modifiers:
+        - source: Compendium.cth-base.cth-temoin.Item.oCrMhGMqUTAbn2U0
+          type: capacity
+          subtype: skill
+          target: int
+          apply: self
+          value: '+5'
+          choiceGroup: 0
+          additionalInfos: Premiers soins
+      resolvers: []
+effects: []
+sort: 100000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!oCrMhGMqUTAbn2U0'

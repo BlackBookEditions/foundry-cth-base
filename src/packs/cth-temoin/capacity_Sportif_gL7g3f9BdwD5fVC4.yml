@@ -1,0 +1,26 @@
+folder: aFrSiNFgtflfYy4z
+name: Sportif
+type: capacity
+img: icons/svg/upgrade.svg
+_id: gL7g3f9BdwD5fVC4
+system:
+  description: <p>Livre du Témoin page 79</p>
+  rank: 2
+  learned: false
+  path: Compendium.cth-base.cth-temoin.Item.T4TV0sNvzEPPr3E0
+effects: []
+sort: 200000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!gL7g3f9BdwD5fVC4'

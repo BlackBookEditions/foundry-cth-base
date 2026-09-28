@@ -1,0 +1,20 @@
+name: Voie des armes de contact
+sorting: m
+folder: DfO1YtMjTywvvSlL
+type: Item
+_id: tyBz5eREBmuY9dpH
+description: ''
+sort: 100000
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!folders!tyBz5eREBmuY9dpH'

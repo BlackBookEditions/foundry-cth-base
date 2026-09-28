@@ -1,0 +1,30 @@
+folder: urxm71OnHjURIixD
+name: Voie du discours
+type: path
+img: icons/svg/aura.svg
+_id: CDMdNt9E1f3DKntj
+system:
+  subtype: profile
+  description: <p>Livre du Témoin page 78</p>
+  capacities:
+    - Compendium.cth-base.cth-temoin.Item.I1yrxU7OPHt6howM
+    - Compendium.cth-base.cth-temoin.Item.5oI3CbeTB3BLLOMD
+    - Compendium.cth-base.cth-temoin.Item.NwA1ATVYRCTNhVNZ
+    - Compendium.cth-base.cth-temoin.Item.nlQV6bXzQefXcR1A
+    - Compendium.cth-base.cth-temoin.Item.XNF3koVB5M5XyWfg
+effects: []
+sort: 600000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!CDMdNt9E1f3DKntj'

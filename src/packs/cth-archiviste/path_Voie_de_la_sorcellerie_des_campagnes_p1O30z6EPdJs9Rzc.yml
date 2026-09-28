@@ -1,0 +1,30 @@
+folder: oGOmkQ1Vkh2gbwkK
+name: Voie de la sorcellerie des campagnes
+type: path
+img: icons/magic/symbols/circled-gem-pink.webp
+_id: p1O30z6EPdJs9Rzc
+system:
+  subtype: profile
+  description: <p>Livre de l'Archiviste page 30</p>
+  capacities:
+    - Compendium.cth-base.cth-archiviste.Item.2mSyc87oy5l7FU2m
+    - Compendium.cth-base.cth-archiviste.Item.WwEkFnAcMamL585v
+    - Compendium.cth-base.cth-archiviste.Item.I7q3JIgiQedErS6p
+    - Compendium.cth-base.cth-archiviste.Item.Me3U7GcgyB4cZb70
+    - Compendium.cth-base.cth-archiviste.Item.CHkcp1PZADLxQcUa
+effects: []
+sort: 1200000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!p1O30z6EPdJs9Rzc'

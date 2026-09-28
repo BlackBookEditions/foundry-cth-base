@@ -1,0 +1,64 @@
+folder: V0ETNPwPUEX895UU
+name: Gilet rembourré
+type: equipment
+img: icons/equipment/chest/vest-cloth-tattered-tan.webp
+_id: oTF7uASSEuSKCevu
+system:
+  description: <p>Livre du Témoin page 108</p>
+  subtype: armor
+  martialCategory: protection
+  damagetype: ''
+  price:
+    value: 0
+    unit: usd
+  equipped: false
+  properties:
+    equipable: true
+    reloadable: false
+    stackable: false
+  usage:
+    oneHand: false
+    twoHand: false
+  actions:
+    - source: Compendium.cth-base.cth-temoin.Item.oTF7uASSEuSKCevu
+      indice: 0
+      label: ''
+      chatFlavor: ''
+      type: buff
+      img: icons/svg/d20-highlight.svg
+      properties:
+        visible: false
+        enabled: false
+        activable: false
+        temporary: false
+        noManaCost: false
+      conditions:
+        - predicate: isEquipped
+      modifiers:
+        - type: equipment
+          source: Compendium.cth-base.cth-temoin.Item.oTF7uASSEuSKCevu
+          additionalInfos: ''
+          subtype: combat
+          target: dr
+          apply: self
+          value: '3'
+      resolvers: []
+  tags: []
+  defense: null
+  magicalDefense: null
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!oTF7uASSEuSKCevu'

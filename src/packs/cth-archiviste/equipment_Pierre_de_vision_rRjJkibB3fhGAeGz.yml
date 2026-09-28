@@ -1,0 +1,62 @@
+folder: WGwd6lamnlIBeTT4
+name: Pierre de vision
+type: equipment
+img: icons/commodities/treasure/gem-framed-spiral-purple.webp
+_id: rRjJkibB3fhGAeGz
+system:
+  description: <p>Livre de l'Archiviste page 70</p>
+  subtype: misc
+  martialCategory: artefact
+  damagetype: ''
+  price:
+    value: 0
+    unit: usd
+  equipped: false
+  properties:
+    equipable: true
+    reloadable: false
+    stackable: false
+  usage:
+    oneHand: false
+    twoHand: false
+  actions:
+    - source: Compendium.cth-base.cth-archiviste.Item.rRjJkibB3fhGAeGz
+      indice: 0
+      label: ''
+      chatFlavor: ''
+      type: buff
+      img: icons/svg/d20-highlight.svg
+      properties:
+        visible: false
+        enabled: false
+        activable: false
+        temporary: false
+        noManaCost: false
+      conditions:
+        - predicate: isEquipped
+      modifiers:
+        - type: equipment
+          source: Compendium.cth-base.cth-archiviste.Item.rRjJkibB3fhGAeGz
+          additionalInfos: ''
+          subtype: skill
+          target: per
+          apply: self
+          value: '+3'
+      resolvers: []
+  tags: []
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!rRjJkibB3fhGAeGz'

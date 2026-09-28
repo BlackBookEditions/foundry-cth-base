@@ -1,0 +1,20 @@
+name: Voie de la sorcellerie des campagnes
+sorting: m
+folder: GFucsOjj0EZ1ppDY
+type: Item
+_id: g29oIpsvEdina4QV
+description: ''
+sort: 1200000
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!folders!g29oIpsvEdina4QV'

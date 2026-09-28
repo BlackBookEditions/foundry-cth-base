@@ -1,0 +1,28 @@
+folder: 9YYgi66AGByXhhAZ
+name: Sans visage aux cent visages
+type: capacity
+img: icons/magic/symbols/mask-metal-silver-white.webp
+_id: aJOH76iAE9osZjaB
+system:
+  description: <p>Livre de l'Archiviste page 85</p>
+  rank: 4
+  learned: false
+  actionType: l
+  properties:
+    spell: true
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!aJOH76iAE9osZjaB'

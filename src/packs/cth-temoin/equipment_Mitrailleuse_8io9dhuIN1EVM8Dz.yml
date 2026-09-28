@@ -1,0 +1,89 @@
+folder: RDgChSk9nSRDIByv
+name: Mitrailleuse
+type: equipment
+img: icons/weapons/guns/gun-chain-gatling-belt.webp
+_id: 8io9dhuIN1EVM8Dz
+system:
+  description: <p>Livre du Témoin page 108</p>
+  subtype: weapon
+  martialCategory: feu
+  damagetype: piercing
+  price:
+    value: 0
+    unit: usd
+  equipped: false
+  properties:
+    equipable: true
+    reloadable: true
+    stackable: false
+  usage:
+    oneHand: false
+    twoHand: true
+  actions:
+    - source: Compendium.cth-base.cth-temoin.Item.8io9dhuIN1EVM8Dz
+      indice: 0
+      label: ''
+      chatFlavor: ''
+      type: ranged
+      img: icons/svg/d20-highlight.svg
+      properties:
+        visible: false
+        enabled: false
+        activable: true
+        temporary: false
+        noManaCost: false
+      conditions:
+        - predicate: isEquipped
+      resolvers:
+        - type: attack
+          bonusDiceAdd: false
+          malusDiceAdd: false
+          skill:
+            formula: '@atd'
+            crit: ''
+            difficulty: '@cible.def'
+          dmg:
+            formula: 2d6
+          target:
+            type: none
+            number: '0'
+            scope: all
+          additionalEffect:
+            active: false
+            applyOn: success
+            statuses: []
+            duration: '0'
+            unit: round
+      modifiers: []
+  tags: []
+  range:
+    base: 0
+    ability: null
+    details: null
+    unit: m
+    min: null
+    max: null
+    bonuses:
+      sheet: 0
+      effects: 0
+    value: 500
+  charges:
+    current: 50
+    max: 50
+    destroyIfEmpty: false
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!8io9dhuIN1EVM8Dz'

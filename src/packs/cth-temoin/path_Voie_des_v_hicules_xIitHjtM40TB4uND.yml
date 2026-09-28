@@ -1,0 +1,30 @@
+folder: urxm71OnHjURIixD
+name: Voie des véhicules
+type: path
+img: icons/svg/aura.svg
+_id: xIitHjtM40TB4uND
+system:
+  subtype: profile
+  description: <p>Livre du Témoin page 89</p>
+  capacities:
+    - Compendium.cth-base.cth-temoin.Item.sKVE4uVCDzj4YYEk
+    - Compendium.cth-base.cth-temoin.Item.KfSAX8fomvWAO1DU
+    - Compendium.cth-base.cth-temoin.Item.EUjuDVRPDqzEHbE3
+    - Compendium.cth-base.cth-temoin.Item.4BFcCgGcNlOdiRLA
+    - Compendium.cth-base.cth-temoin.Item.MdAnvLyS7A9YQrz6
+effects: []
+sort: 1800000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!xIitHjtM40TB4uND'

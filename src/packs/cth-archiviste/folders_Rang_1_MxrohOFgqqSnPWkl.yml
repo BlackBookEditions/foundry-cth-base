@@ -1,0 +1,20 @@
+name: Rang 1
+sorting: a
+folder: ezKHN1lWSFDiy4Ih
+type: Item
+_id: MxrohOFgqqSnPWkl
+description: ''
+sort: 100000
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!folders!MxrohOFgqqSnPWkl'

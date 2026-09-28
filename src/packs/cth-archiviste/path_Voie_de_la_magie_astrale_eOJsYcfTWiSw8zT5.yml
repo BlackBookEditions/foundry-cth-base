@@ -1,0 +1,30 @@
+folder: oGOmkQ1Vkh2gbwkK
+name: Voie de la magie astrale
+type: path
+img: icons/magic/symbols/circled-gem-pink.webp
+_id: eOJsYcfTWiSw8zT5
+system:
+  subtype: profile
+  description: <p>Livre de l'Archiviste page 23</p>
+  capacities:
+    - Compendium.cth-base.cth-archiviste.Item.HZEeDFtaHs7XuPkk
+    - Compendium.cth-base.cth-archiviste.Item.Ix5Ij1wMzdwBoEEf
+    - Compendium.cth-base.cth-archiviste.Item.6mMDiEfIJ83lzlVv
+    - Compendium.cth-base.cth-archiviste.Item.dB9sI378Ic9hEclB
+    - Compendium.cth-base.cth-archiviste.Item.mrxVQSpGFSigzgUM
+effects: []
+sort: 700000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!eOJsYcfTWiSw8zT5'

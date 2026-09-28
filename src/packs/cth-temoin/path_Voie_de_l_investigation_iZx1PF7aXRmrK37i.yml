@@ -1,0 +1,30 @@
+folder: urxm71OnHjURIixD
+name: Voie de l'investigation
+type: path
+img: icons/svg/aura.svg
+_id: iZx1PF7aXRmrK37i
+system:
+  subtype: profile
+  description: <p>Livre du Témoin page 82</p>
+  capacities:
+    - Compendium.cth-base.cth-temoin.Item.MvMvGe9SZDNXWHAy
+    - Compendium.cth-base.cth-temoin.Item.shqWZsSPYEpzblvu
+    - Compendium.cth-base.cth-temoin.Item.p961f6a5Pxpu3kFD
+    - Compendium.cth-base.cth-temoin.Item.ayQcBeZSGXVkGFEj
+    - Compendium.cth-base.cth-temoin.Item.G6Ak9VRPbiEZxFih
+effects: []
+sort: 1000000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!iZx1PF7aXRmrK37i'

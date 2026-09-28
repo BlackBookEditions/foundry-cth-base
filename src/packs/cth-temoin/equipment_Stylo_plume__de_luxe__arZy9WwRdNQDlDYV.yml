@@ -1,0 +1,39 @@
+folder: RKLhY7qYIjGTcrqH
+name: Stylo-plume (de luxe)
+type: equipment
+img: icons/tools/scribal/pen-steel-grey-brown.webp
+_id: arZy9WwRdNQDlDYV
+system:
+  description: <p>Livre du Témoin pages 96-97</p>
+  subtype: misc
+  martialCategory: divers
+  damagetype: ''
+  price:
+    value: 5
+    unit: usd
+  equipped: false
+  properties:
+    equipable: false
+    reloadable: false
+    stackable: false
+  usage:
+    oneHand: false
+    twoHand: false
+  actions: []
+  tags: []
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!arZy9WwRdNQDlDYV'

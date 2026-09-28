@@ -1,0 +1,28 @@
+folder: Qfl7nGyDUnYK7Dgs
+name: Appeler/Congédier une nuée de Choses rats
+type: capacity
+img: icons/magic/death/skull-pile-glowing-pink.webp
+_id: 3MY0xsCyfnspHFYo
+system:
+  description: <p>Livre de l'Archiviste pages 82-83</p>
+  rank: 3
+  learned: false
+  actionType: l
+  properties:
+    spell: true
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!3MY0xsCyfnspHFYo'

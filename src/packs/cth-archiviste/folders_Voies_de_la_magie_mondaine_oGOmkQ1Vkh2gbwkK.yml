@@ -1,0 +1,20 @@
+name: Voies de la magie mondaine
+sorting: m
+folder: null
+type: Item
+_id: oGOmkQ1Vkh2gbwkK
+description: ''
+sort: 200000
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!folders!oGOmkQ1Vkh2gbwkK'

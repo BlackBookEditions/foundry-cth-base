@@ -1,0 +1,20 @@
+name: Rituel d'ouverture de portail
+sorting: m
+folder: EPAd55HyS9TcEkBU
+type: Item
+_id: TK1sWdCAswanxDrB
+description: ''
+sort: 200000
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!folders!TK1sWdCAswanxDrB'

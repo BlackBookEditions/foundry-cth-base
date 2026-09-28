@@ -1,0 +1,30 @@
+folder: oGOmkQ1Vkh2gbwkK
+name: Voie de l’illusion
+type: path
+img: icons/magic/symbols/circled-gem-pink.webp
+_id: 0ik8BAj2QKVn5ka7
+system:
+  subtype: profile
+  description: <p>Livre de l'Archiviste page 22</p>
+  capacities:
+    - Compendium.cth-base.cth-archiviste.Item.5QtFCfWKjgFrfBed
+    - Compendium.cth-base.cth-archiviste.Item.9cKsyk5I6dMqUcSA
+    - Compendium.cth-base.cth-archiviste.Item.5Si0bj6bUHNb9vmK
+    - Compendium.cth-base.cth-archiviste.Item.Wvmht3q4ahYfYbkX
+    - Compendium.cth-base.cth-archiviste.Item.lRwraplCjmdow6CE
+effects: []
+sort: 600000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!0ik8BAj2QKVn5ka7'

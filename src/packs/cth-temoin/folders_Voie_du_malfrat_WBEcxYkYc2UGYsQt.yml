@@ -1,0 +1,20 @@
+name: Voie du malfrat
+sorting: m
+folder: DfO1YtMjTywvvSlL
+type: Item
+_id: WBEcxYkYc2UGYsQt
+description: ''
+sort: 1200000
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!folders!WBEcxYkYc2UGYsQt'

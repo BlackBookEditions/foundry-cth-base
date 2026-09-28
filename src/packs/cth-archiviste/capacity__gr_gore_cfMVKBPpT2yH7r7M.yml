@@ -1,0 +1,28 @@
+folder: MxrohOFgqqSnPWkl
+name: Égrégore
+type: capacity
+img: icons/magic/unholy/hands-circle-light-green.webp
+_id: cfMVKBPpT2yH7r7M
+system:
+  description: <p>Livre de l'Archiviste page 81</p>
+  rank: 1
+  learned: false
+  actionType: l
+  properties:
+    spell: true
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!cfMVKBPpT2yH7r7M'

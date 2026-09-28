@@ -1,0 +1,30 @@
+folder: urxm71OnHjURIixD
+name: Voie des corporations
+type: path
+img: icons/svg/aura.svg
+_id: uR9tw0vTsUEv6qpi
+system:
+  subtype: profile
+  description: <p>Livre du Témoin page 78</p>
+  capacities:
+    - Compendium.cth-base.cth-temoin.Item.hky2trTMS5yDjJK6
+    - Compendium.cth-base.cth-temoin.Item.4DliERjwole9CT2a
+    - Compendium.cth-base.cth-temoin.Item.V8laENQiBSy4GBIv
+    - Compendium.cth-base.cth-temoin.Item.WuP95Y8cP2ayaZ6o
+    - Compendium.cth-base.cth-temoin.Item.SKikJEdNj5yMYHqR
+effects: []
+sort: 500000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!uR9tw0vTsUEv6qpi'

@@ -1,0 +1,26 @@
+folder: WBEcxYkYc2UGYsQt
+name: Cerveau
+type: capacity
+img: icons/svg/upgrade.svg
+_id: qCB8gA3TAjqUbCEu
+system:
+  description: <p>Livre du Témoin page 84</p>
+  rank: 5
+  learned: false
+  path: Compendium.cth-base.cth-temoin.Item.RXzrmQxFi2i52s06
+effects: []
+sort: 500000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!qCB8gA3TAjqUbCEu'

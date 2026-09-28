@@ -1,0 +1,20 @@
+name: Équipement divers
+sorting: a
+folder: null
+type: Item
+_id: RKLhY7qYIjGTcrqH
+description: ''
+sort: 400000
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!folders!RKLhY7qYIjGTcrqH'

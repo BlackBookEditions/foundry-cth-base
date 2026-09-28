@@ -1,0 +1,28 @@
+folder: hyiACuetUgBv0wvt
+name: Homoncule de chair
+type: capacity
+img: icons/magic/death/blood-corruption-vomit-red.webp
+_id: VZse6Xhw7avCt2rv
+system:
+  description: <p>Livre de l'Archiviste page 86</p>
+  rank: 5
+  learned: false
+  actionType: l
+  properties:
+    spell: true
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!VZse6Xhw7avCt2rv'

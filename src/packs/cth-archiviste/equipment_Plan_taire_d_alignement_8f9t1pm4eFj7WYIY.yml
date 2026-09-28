@@ -1,0 +1,39 @@
+folder: WGwd6lamnlIBeTT4
+name: Planétaire d'alignement
+type: equipment
+img: icons/tools/navigation/sextant-brass-brown.webp
+_id: 8f9t1pm4eFj7WYIY
+system:
+  description: <p>Livre de l'Archiviste page 70</p>
+  subtype: misc
+  martialCategory: artefact
+  damagetype: ''
+  price:
+    value: 0
+    unit: usd
+  equipped: false
+  properties:
+    equipable: true
+    reloadable: false
+    stackable: false
+  usage:
+    oneHand: false
+    twoHand: false
+  actions: []
+  tags: []
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!8f9t1pm4eFj7WYIY'

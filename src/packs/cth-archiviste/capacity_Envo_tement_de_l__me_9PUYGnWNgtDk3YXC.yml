@@ -1,0 +1,28 @@
+folder: Qfl7nGyDUnYK7Dgs
+name: Envoûtement de l'âme
+type: capacity
+img: icons/magic/control/control-influence-puppet.webp
+_id: 9PUYGnWNgtDk3YXC
+system:
+  description: <p>Livre de l'Archiviste page 83</p>
+  rank: 3
+  learned: false
+  actionType: l
+  properties:
+    spell: true
+effects: []
+sort: 0
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!9PUYGnWNgtDk3YXC'

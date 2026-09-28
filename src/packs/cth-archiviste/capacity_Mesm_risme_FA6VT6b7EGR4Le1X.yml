@@ -1,0 +1,26 @@
+folder: jHkOR4l2VXISc1GK
+name: Mesmérisme
+type: capacity
+img: icons/magic/symbols/runes-star-pentagon-magenta.webp
+_id: FA6VT6b7EGR4Le1X
+system:
+  description: <p>Livre de l'Archiviste page 22</p>
+  rank: 3
+  learned: false
+  path: Compendium.cth-base.cth-archiviste.Item.dzf3SN2UxuadASOJ
+effects: []
+sort: 300000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!FA6VT6b7EGR4Le1X'

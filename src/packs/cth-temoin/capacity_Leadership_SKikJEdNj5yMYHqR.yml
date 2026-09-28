@@ -1,0 +1,62 @@
+folder: RrK9gUb18FYqZJYP
+name: Leadership
+type: capacity
+img: icons/svg/upgrade.svg
+_id: SKikJEdNj5yMYHqR
+system:
+  description: <p>Livre du Témoin page 78</p>
+  rank: 5
+  learned: false
+  path: Compendium.cth-base.cth-temoin.Item.uR9tw0vTsUEv6qpi
+  actions:
+    - source: Compendium.cth-base.cth-temoin.Item.SKikJEdNj5yMYHqR
+      indice: 0
+      type: buff
+      img: icons/svg/upgrade.svg
+      label: Leadership
+      chatFlavor: ''
+      actionType: none
+      properties:
+        visible: false
+        activable: false
+        enabled: false
+        temporary: false
+        noManaCost: false
+        noChargesUsed: false
+      conditions:
+        - predicate: isLearned
+          object: ''
+      modifiers:
+        - source: Compendium.cth-base.cth-temoin.Item.SKikJEdNj5yMYHqR
+          type: capacity
+          subtype: ability
+          target: cha
+          apply: self
+          value: '+1'
+          choiceGroup: 0
+          additionalInfos: ''
+        - source: Compendium.cth-base.cth-temoin.Item.SKikJEdNj5yMYHqR
+          type: capacity
+          subtype: ability
+          target: int
+          apply: self
+          value: '+1'
+          choiceGroup: 0
+          additionalInfos: ''
+      resolvers: []
+effects: []
+sort: 500000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!SKikJEdNj5yMYHqR'

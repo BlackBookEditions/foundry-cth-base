@@ -1,0 +1,26 @@
+folder: xtBjwrWPcRTE1QNb
+name: Invisible
+type: capacity
+img: icons/svg/upgrade.svg
+_id: T9Srqf7RYFbciAdV
+system:
+  description: <p>Livre du Témoin page 81</p>
+  rank: 3
+  learned: false
+  path: Compendium.cth-base.cth-temoin.Item.5i81vu3jg29axIxo
+effects: []
+sort: 300000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!T9Srqf7RYFbciAdV'

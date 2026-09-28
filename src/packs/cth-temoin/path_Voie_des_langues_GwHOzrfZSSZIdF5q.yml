@@ -1,0 +1,30 @@
+folder: urxm71OnHjURIixD
+name: Voie des langues
+type: path
+img: icons/svg/aura.svg
+_id: GwHOzrfZSSZIdF5q
+system:
+  subtype: profile
+  description: <p>Livre du Témoin page 82</p>
+  capacities:
+    - Compendium.cth-base.cth-temoin.Item.9pNTjwOSRFH2s0Kk
+    - Compendium.cth-base.cth-temoin.Item.wflcx9NL07CRRrUC
+    - Compendium.cth-base.cth-temoin.Item.v3vQQ7AIeUqezhPe
+    - Compendium.cth-base.cth-temoin.Item.idGrpam7JE0dUDEz
+    - Compendium.cth-base.cth-temoin.Item.5e2cNGg9DH4BWyS8
+effects: []
+sort: 1100000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!GwHOzrfZSSZIdF5q'

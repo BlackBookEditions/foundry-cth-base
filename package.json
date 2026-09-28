@@ -7,6 +7,13 @@
   },
   "scripts": {
     "compile": "node ./tools/compile-less.mjs",
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs",
+    "generateObjets": "node ./tools/generate-objets-pack.mjs",
+    "LDBtoYML": "node ./tools/LDBtoYML.mjs",
+    "YMLtoLDB": "node ./tools/YMLtoLDB.mjs"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^3.0.4",
+    "js-yaml": "^5.4.2"
   }
 }

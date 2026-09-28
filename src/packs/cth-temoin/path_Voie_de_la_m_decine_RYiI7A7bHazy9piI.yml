@@ -1,0 +1,30 @@
+folder: urxm71OnHjURIixD
+name: Voie de la médecine
+type: path
+img: icons/svg/aura.svg
+_id: RYiI7A7bHazy9piI
+system:
+  subtype: profile
+  description: <p>Livre du Témoin page 85</p>
+  capacities:
+    - Compendium.cth-base.cth-temoin.Item.oCrMhGMqUTAbn2U0
+    - Compendium.cth-base.cth-temoin.Item.70kFYFibqqXNwbKC
+    - Compendium.cth-base.cth-temoin.Item.fjNisPqhfhg12hU8
+    - Compendium.cth-base.cth-temoin.Item.zXxfFeqBXB9DDcxU
+    - Compendium.cth-base.cth-temoin.Item.m7gpGwtk99pZ8kcj
+effects: []
+sort: 1400000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!RYiI7A7bHazy9piI'

@@ -1,0 +1,20 @@
+name: Voie de la mécanique
+sorting: m
+folder: DfO1YtMjTywvvSlL
+type: Item
+_id: SHwG7DWBBSczH8fG
+description: ''
+sort: 1300000
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!folders!SHwG7DWBBSczH8fG'

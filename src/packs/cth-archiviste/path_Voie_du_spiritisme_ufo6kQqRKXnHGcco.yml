@@ -1,0 +1,30 @@
+folder: oGOmkQ1Vkh2gbwkK
+name: Voie du spiritisme
+type: path
+img: icons/magic/symbols/circled-gem-pink.webp
+_id: ufo6kQqRKXnHGcco
+system:
+  subtype: profile
+  description: <p>Livre de l'Archiviste page 32</p>
+  capacities:
+    - Compendium.cth-base.cth-archiviste.Item.o1v0LwwjDEXl7VHH
+    - Compendium.cth-base.cth-archiviste.Item.l3eFGgp2QM2TFTqD
+    - Compendium.cth-base.cth-archiviste.Item.DkuLTfBAShojJWFH
+    - Compendium.cth-base.cth-archiviste.Item.VXRmGxNyNj6WsorX
+    - Compendium.cth-base.cth-archiviste.Item.SFoftXWTNUYVfSr8
+effects: []
+sort: 1300000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!ufo6kQqRKXnHGcco'

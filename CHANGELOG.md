@@ -1,3 +1,7 @@
+# 0.9.0
+- Ajout du compendium du témoin. Armes, armures, capacités par voie, équipement divers, voies de base. Les descriptions renvoient à la page au lieu de reprendre le texte.
+- Ajout du compendium de l'archiviste. Artefacts, rituels, sortilèges, voies de la magie mondaine. Les descriptions renvoient à la page au lieu de reprendre le texte.
+
 # 0.8.2
 - Statuts propres à Cthulhu Origines :
   - Aveuglé : -5 en Initiative et en Défense, et -10 aux actions basées sur la vue (réduit à -5 sur un test de Perception réussi)

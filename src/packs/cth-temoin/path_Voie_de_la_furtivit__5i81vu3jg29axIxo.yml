@@ -1,0 +1,30 @@
+folder: urxm71OnHjURIixD
+name: Voie de la furtivité
+type: path
+img: icons/svg/aura.svg
+_id: 5i81vu3jg29axIxo
+system:
+  subtype: profile
+  description: <p>Livre du Témoin page 81</p>
+  capacities:
+    - Compendium.cth-base.cth-temoin.Item.upFAxt2nRcTNytjj
+    - Compendium.cth-base.cth-temoin.Item.qD0bMpiGDe2LkCP4
+    - Compendium.cth-base.cth-temoin.Item.T9Srqf7RYFbciAdV
+    - Compendium.cth-base.cth-temoin.Item.KG8ncxVxjxtZUKi0
+    - Compendium.cth-base.cth-temoin.Item.7Nj1pFLMbK6sDOX2
+effects: []
+sort: 900000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!5i81vu3jg29axIxo'

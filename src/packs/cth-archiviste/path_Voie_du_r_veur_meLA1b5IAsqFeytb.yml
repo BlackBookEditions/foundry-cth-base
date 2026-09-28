@@ -1,0 +1,30 @@
+folder: oGOmkQ1Vkh2gbwkK
+name: Voie du rêveur
+type: path
+img: icons/magic/symbols/circled-gem-pink.webp
+_id: meLA1b5IAsqFeytb
+system:
+  subtype: profile
+  description: <p>Livre de l'Archiviste page 28</p>
+  capacities:
+    - Compendium.cth-base.cth-archiviste.Item.k8qFGOraA4MweG9x
+    - Compendium.cth-base.cth-archiviste.Item.Xjm7dc7oNRk9fG6N
+    - Compendium.cth-base.cth-archiviste.Item.JOCBhbQiQ2nGgt3w
+    - Compendium.cth-base.cth-archiviste.Item.eoVj7KXj4Qx6436I
+    - Compendium.cth-base.cth-archiviste.Item.MAifiuASWMzWvld6
+effects: []
+sort: 1100000
+ownership:
+  default: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '14.368'
+  systemId: co2
+  systemVersion: 2.3.12
+  createdTime: 1790553600000
+  modifiedTime: 1790553600000
+  lastModifiedBy: null
+  exportSource: null
+_key: '!items!meLA1b5IAsqFeytb'
