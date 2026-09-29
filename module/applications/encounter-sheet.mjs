@@ -1,6 +1,6 @@
 import COC2EncounterSheet from "../../../coc2-base/module/applications/encounter-sheet.mjs"
 import { getSecondScaleContext, updateSecondScale } from "../../../coc2-base/module/config/coc2.mjs"
-import { getVolDifficulty, getRitualDifficulty, HORROR_RANK } from "../config/cth.mjs"
+import { getVolDifficulty, getRitualDifficulty, HORROR_RANK } from "../config/horror-rank.mjs"
 
 /**
  * Fiche d'adversaire cth-base : ajoute à la fiche coc2-base deux notions propres à Cthulhu Origines.

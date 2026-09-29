@@ -26,6 +26,16 @@ Chaîne de dépendances : `co2` (système) → `coc2-base` (module) → **`cth-b
   doublon de « CTH Témoin ») sont retirés de `game.data.packs` au hook `i18nInit`, après tous les `init`
   et avant la création des compendiums du monde : ils n'existent pas tant que cth-base est actif.
 
+`cth-base.mjs` se limite à l'amorçage : `CONFIG.CTHBASE`, le profil des états posé au chargement du
+script, les hooks `i18nInit`/`init`/`setup`/`ready` et le câblage des hooks de rendu. Le reste vit
+dans `module/` :
+
+| Dossier | Rôle |
+| --- | --- |
+| `config/` | Les données d'univers, un fichier par domaine : `consciousness` (profil et paliers de l'Échelle de conscience), `horror-rank` (Rang d'horreur et difficultés), `settings` (réglages), `system-patch` (ce que cth impose à co2 et à coc2-base, en trois fonctions selon leur moment d'exécution). `config/cth.mjs` porte `CTH_CONFIG` et ré-exporte les autres, pour les imports historiques de ce chemin. |
+| `models/`, `applications/` | Les sous-classes coc2-base (`CTHEncounterData`, `CTHEncounterSheet`, notes de version). |
+| `hooks/` | `packs` (compendiums masqués au `i18nInit`) et `interface` (section de la barre latérale). |
+
 ## Dépendances
 
 `module.json` déclare `coc2-base` en `relationships.requires` : Foundry exige sa présence
