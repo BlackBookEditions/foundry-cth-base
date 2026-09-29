@@ -9,7 +9,15 @@
  *   affaibli: { name: "CTHBASE.status.choque" },
  * }
  */
-export const CTH_CONFIG = {}
+export const CTH_CONFIG = {
+  /**
+   * Compendiums d'autres modules retirés du monde quand cth-base est actif (identifiants `module.pack`).
+   * « COC2 Objets » fait doublon avec « CTH Témoin » ; le guide de coc2-base reste, le guide CTH y renvoie.
+   * Lu au hook i18nInit (cf. cth-base.mjs) : un module de scénario peut encore modifier la liste dans son init.
+   * @type {string[]}
+   */
+  hiddenPacks: ["coc2-base.coc2-objets-sans-description"],
+}
 
 /** Profil mécanique forcé de l'Échelle de conscience. */
 export const CONSCIOUSNESS_MODIFIER_PROFILE = {

@@ -45,6 +45,10 @@ pages:
             <li class="sans-puce"><strong>CTH Guide du module</strong> — ce guide.</li>
           </ul>
           <p class="alinea">
+            Le compendium <strong>COC2 Objets</strong> de coc2-base est masqué tant que ce module est actif : ses voies et ses équipements sont ceux de COC2 et font doublon avec
+            CTH Témoin. Le <strong>COC2 Guide du module</strong> reste disponible.
+          </p>
+          <p class="alinea">
             Les objets des deux premiers compendiums n'ont <strong>pas de texte descriptif</strong> : leur description indique seulement la page du livre où ils sont décrits (par exemple
             « Livre du Témoin page 74 »). Il faut donc disposer des livres pour jouer.
           </p>
@@ -64,7 +68,7 @@ pages:
       systemId: co2
       systemVersion: 2.3.12
       createdTime: 1790634575528
-      modifiedTime: 1790635063133
+      modifiedTime: 1790708350575
       lastModifiedBy: null
       exportSource: null
     _key: '!journal.pages!k8BCCPxwPzcx978z.dJUM8yoGhs5xK9A9'
@@ -229,7 +233,7 @@ pages:
       systemId: co2
       systemVersion: 2.3.12
       createdTime: 1790634575528
-      modifiedTime: 1790635063133
+      modifiedTime: 1790708350575
       lastModifiedBy: null
       exportSource: null
     _key: '!journal.pages!k8BCCPxwPzcx978z.xPwQzUwLYw109xz4'
@@ -322,7 +326,7 @@ pages:
       systemId: co2
       systemVersion: 2.3.12
       createdTime: 1790634575528
-      modifiedTime: 1790635063133
+      modifiedTime: 1790708350575
       lastModifiedBy: null
       exportSource: null
     _key: '!journal.pages!k8BCCPxwPzcx978z.sKx50bOKg27q6s1Q'
@@ -428,7 +432,7 @@ pages:
       systemId: co2
       systemVersion: 2.3.12
       createdTime: 1790634575528
-      modifiedTime: 1790635063133
+      modifiedTime: 1790708350575
       lastModifiedBy: null
       exportSource: null
     _key: '!journal.pages!k8BCCPxwPzcx978z.uDmnz5sdiuFhz5Ut'
@@ -499,7 +503,7 @@ pages:
       systemId: co2
       systemVersion: 2.3.12
       createdTime: 1790634575528
-      modifiedTime: 1790635063133
+      modifiedTime: 1790708350575
       lastModifiedBy: null
       exportSource: null
     _key: '!journal.pages!k8BCCPxwPzcx978z.eRGefwUr8xqT3HlJ'
@@ -517,7 +521,7 @@ _stats:
   systemId: co2
   systemVersion: 2.3.12
   createdTime: 1790634575528
-  modifiedTime: 1790635063133
+  modifiedTime: 1790708350575
   lastModifiedBy: null
   exportSource: null
 _id: k8BCCPxwPzcx978z

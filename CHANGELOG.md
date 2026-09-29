@@ -3,6 +3,7 @@
 - Ajout du compendium de l'archiviste. Artefacts, rituels, sortilèges, voies de la magie mondaine. Les descriptions renvoient à la page au lieu de reprendre le texte.
 - Ajout du compendium « CTH Guide du module » : guide des fonctionnalités propres à Cthulhu Origines (échelle de conscience, rang d'horreur, états, compendiums, thème visuel), avec la mise en forme du guide COC2.
 - Notes de version intégrées, comme dans COC2 : une fenêtre s'ouvre au MJ après une mise à jour (case « Ne plus afficher les notes de ces versions »), et reste consultable via le bouton « Notes de version » de la section Cthulhu Origines du menu latéral.
+- Le compendium « COC2 Objets » de coc2-base est masqué quand cth-base est actif, car il fait doublon avec « CTH Témoin ». Le guide de COC2 reste disponible.
 
 # 0.8.2
 - Statuts propres à Cthulhu Origines :

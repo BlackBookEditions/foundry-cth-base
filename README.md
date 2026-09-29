@@ -22,6 +22,9 @@ Chaîne de dépendances : `co2` (système) → `coc2-base` (module) → **`cth-b
   malus de CHA pour l'empathie aux paliers ±1/±3/±5/±10. Le bonus est présélectionné lors
   des tests d'horreur ; le malus d'empathie reste un choix contextuel dans la fenêtre de jet.
   La configuration générique de COC2 est masquée dans cet univers.
+- Les **compendiums** de coc2-base listés dans `CONFIG.CTHBASE.hiddenPacks` (par défaut « COC2 Objets »,
+  doublon de « CTH Témoin ») sont retirés de `game.data.packs` au hook `i18nInit`, après tous les `init`
+  et avant la création des compendiums du monde : ils n'existent pas tant que cth-base est actif.
 
 ## Dépendances
 
