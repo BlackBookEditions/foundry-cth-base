@@ -1,3 +1,6 @@
+# 0.9.1
+- Installation : le module COC2 requis s'installe automatiquement avec Cthulhu Origines, depuis l'URL de son manifeste.
+
 # 0.9.0
 - Ajout du compendium du témoin. Armes, armures, capacités par voie, équipement divers, voies de base. Les descriptions renvoient à la page au lieu de reprendre le texte.
 - Ajout du compendium de l'archiviste. Artefacts, rituels, sortilèges, voies de la magie mondaine. Les descriptions renvoient à la page au lieu de reprendre le texte.

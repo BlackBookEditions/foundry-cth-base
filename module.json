@@ -10,7 +10,11 @@
       { "id": "co2", "type": "system", "compatibility": { "verified": "2.3.0" } }
     ],
     "requires": [
-      { "id": "coc2-base", "type": "module" }
+      {
+        "id": "coc2-base",
+        "type": "module",
+        "manifest": "https://github.com/BlackBookEditions/foundry-coc2-base/releases/latest/download/module.json"
+      }
     ],
     "optional": []
   },
